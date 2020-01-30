@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 
-import Hamburger from "../hamburger";
+import AboutMe from "../AboutMe";
 
 const Containter = styled.div`
   height: 100px;
 `;
-
-const Wrapper = styled.div``;
 
 const InnerHeader = styled.div`
   position: relative;
@@ -17,12 +15,6 @@ const InnerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-const Logo = styled.div`
-  font-weight: 700;
-  text-decoration: none;
-  color: black;
 `;
 
 const Menu = styled.div`
@@ -40,11 +32,11 @@ const Header = ({ history }) => {
   const [state, setState] = useState({
     initial: true,
     clicked: null,
-    menuName: "Menu"
+    menuName: "About Me"
   });
   const [disabled, setDisabled] = useState(false);
   useEffect(() => {
-    history.listen(() => setState({ clicked: false, menuName: "Menu" }));
+    history.listen(() => setState({ clicked: false, menuName: "About Me" }));
   });
 
   const handleMenu = () => {
@@ -59,7 +51,7 @@ const Header = ({ history }) => {
       setState({
         initial: false,
         clicked: !state.clicked,
-        menuName: state.clicked ? "Menu" : "Close"
+        menuName: state.clicked ? "About Me" : "Close"
       });
     }
   };
@@ -71,19 +63,14 @@ const Header = ({ history }) => {
   };
   return (
     <Containter>
-      <Wrapper>
-        <InnerHeader>
-          <Logo>
-            <Link to="/">Home</Link>
-          </Logo>
-          <Menu>
-            <button onClick={handleMenu} disabled={disabled}>
-              {state.menuName}
-            </button>
-          </Menu>
-        </InnerHeader>
-      </Wrapper>
-      <Hamburger state={state} />
+      <InnerHeader>
+        <Menu>
+          <button onClick={handleMenu} disabled={disabled}>
+            {state.menuName}
+          </button>
+        </Menu>
+      </InnerHeader>
+      <AboutMe {...state} />
     </Containter>
   );
 };

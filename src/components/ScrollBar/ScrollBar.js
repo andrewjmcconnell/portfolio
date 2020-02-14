@@ -4,12 +4,20 @@ import { ScrollButton, Scroll, ScrollFill } from "./ScrollBar.styled";
 
 const ScrollBar = ({ refs }) => {
   const [refIndex, setRefIndex] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(
+  const [scrollPercent, setScrollPercent] = useState(
     document.documentElement.scrollTop
   );
-  const pageHeight = document.documentElement.offsetHeight - window.innerHeight;
   const listener = () => {
-    setScrollPosition(document.documentElement.scrollTop);
+    setScrollPercent(
+      (document.documentElement.scrollTop /
+        (document.documentElement.scrollHeight -
+          document.documentElement.clientHeight)) *
+        100
+    );
+    var nextEl = refs[refIndex + 1]?.current.getBoundingClientRect();
+    var prevEl = refs[refIndex - 1]?.current.getBoundingClientRect();
+    if (nextEl?.top <= window.innerHeight / 2) setRefIndex(refIndex + 1);
+    if (prevEl?.bottom >= window.innerHeight / 2) setRefIndex(refIndex - 1);
   };
   useLayoutEffect(() => {
     window.addEventListener("scroll", listener);
@@ -20,18 +28,19 @@ const ScrollBar = ({ refs }) => {
   const scroll = offset => _ => {
     if (!!refs[refIndex + offset]) {
       refs[refIndex + offset].current.scrollIntoView({
-          behavior: "smooth"
+        behavior: "smooth"
       });
       setRefIndex(refIndex + offset);
     }
   };
+  console.log(scrollPercent);
   return (
     <Fragment>
       <ScrollButton position="top" onClick={scroll(-1)}>
         up
       </ScrollButton>
       <Scroll>
-        <ScrollFill height={-(scrollPosition / pageHeight) * 50} />
+        <ScrollFill height={scrollPercent} />
       </Scroll>
       <ScrollButton position="bottom" onClick={scroll(1)}>
         down

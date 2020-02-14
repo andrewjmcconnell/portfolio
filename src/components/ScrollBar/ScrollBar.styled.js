@@ -11,9 +11,12 @@ export const Scroll = styled.div`
   bottom: 12.5vh;
 `;
 
-export const ScrollFill = styled.div`
+export const ScrollFill = styled.div.attrs(({ height }) => ({
+  style: {
+    height: `${height}%`
+  }
+}))`
   background-color: green;
-  height: ${({ height }) => `${height}`}%;
 `;
 
 export const ScrollButton = styled.button`

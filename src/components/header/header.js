@@ -11,7 +11,7 @@ const Menu = styled.button`
   cursor: pointer;
   font-size: 0.8rem;
   color: white;
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
   z-index: 10;

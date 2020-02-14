@@ -1,31 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 import AboutMe from "../AboutMe";
 
-const Containter = styled.div`
-  height: 100px;
-`;
-
-const InnerHeader = styled.div`
-  position: relative;
+const Menu = styled.button`
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   z-index: 10;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Menu = styled.div`
-  button {
-    border: none;
-    background: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 0.8rem;
-    color: black;
-  }
 `;
 
 const Header = ({ history }) => {
@@ -62,16 +51,12 @@ const Header = ({ history }) => {
     }, 1200);
   };
   return (
-    <Containter>
-      <InnerHeader>
-        <Menu>
-          <button onClick={handleMenu} disabled={disabled}>
-            {state.menuName}
-          </button>
-        </Menu>
-      </InnerHeader>
+    <Fragment>
+      <Menu onClick={handleMenu} disabled={disabled}>
+        {state.menuName}
+      </Menu>
       <AboutMe {...state} />
-    </Containter>
+    </Fragment>
   );
 };
 export default withRouter(Header);

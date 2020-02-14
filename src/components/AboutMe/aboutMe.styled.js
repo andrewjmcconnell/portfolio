@@ -76,7 +76,6 @@ export const MenuLinks = styled.div`
 
 export const InfoWrapper = styled.div`
   position: relative;
-  
   height: 100%;
   width: 50%;
 `;
@@ -86,14 +85,16 @@ export const Info = styled.div`
   float: right;
   color: white;
   text-align: right;
-  display: flexx;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding-right: 150px;
+  font-family: 'Poppins', sans-serif;
 `;
 
 export const Location = styled.div`
   color: white;
+  font-family: 'Bangers', cursive;
   font-size: 6rem;
   font-weight: 700;
   cursor: pointer;

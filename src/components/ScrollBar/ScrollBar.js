@@ -36,13 +36,17 @@ const ScrollBar = ({ refs }) => {
   console.log(scrollPercent);
   return (
     <Fragment>
-      <ScrollButton position="top" onClick={scroll(-1)}>
+      <ScrollButton position="top" fade={refIndex === 0} onClick={scroll(-1)}>
         up
       </ScrollButton>
       <Scroll>
         <ScrollFill height={scrollPercent} />
       </Scroll>
-      <ScrollButton position="bottom" onClick={scroll(1)}>
+      <ScrollButton
+        position="bottom"
+        fade={refIndex === refs.length - 1}
+        onClick={scroll(1)}
+      >
         down
       </ScrollButton>
     </Fragment>

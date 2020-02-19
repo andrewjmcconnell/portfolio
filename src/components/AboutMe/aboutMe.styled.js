@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 export const AboutMeMenu = styled.div`
-    z-index: 9;
+    z-index: 1;
     top: 0;
     bottom: 0;
     left: 0;
@@ -60,13 +60,11 @@ export const MenuCityBackground = styled.div`
   height: 100%;
   width: 100%;
   opacity: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: ${cameraPan} 30s infinite;
 `;
 
 export const MenuLinks = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
@@ -74,10 +72,17 @@ export const MenuLinks = styled.div`
   width: 50%;
 `;
 
+export const Content = styled.div`
+  flex: 2;
+`;
+
 export const InfoWrapper = styled.div`
+  display: flex;
+  margin: auto;
   position: relative;
   height: 100%;
   width: 50%;
+  z-index: 2;
 `;
 
 export const Info = styled.div`
@@ -89,18 +94,27 @@ export const Info = styled.div`
   justify-content: center;
   align-items: center;
   padding-right: 150px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const Location = styled.div`
   color: white;
-  font-family: 'Bangers', cursive;
+  font-family: "Bangers", cursive;
   font-size: 6rem;
   font-weight: 700;
   cursor: pointer;
   height: 135px;
   overflow: hidden;
+  min-height: fit-content;
   &:hover {
     color: black;
   }
+`;
+
+export const CityImage = styled.svg`
+  src: url(${src => src});
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Scroll = styled.div`
   height: 75vh;
-  background: white;
+  background: transparent;
   width: 8px;
   position: fixed;
   right: 20px;
@@ -20,6 +20,8 @@ export const ScrollFill = styled.div.attrs(({ height }) => ({
 `;
 
 export const ScrollButton = styled.button`
+  opacity: ${({ fade }) => fade ? 0 : 1};
+  transition: opacity .3s ease-in-out;
   position: fixed;
   z-index: 1;
   right: 20px;

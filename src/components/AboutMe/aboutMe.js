@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 import Boston from "../../img/boston.jpg";
 import Evanston from "../../img/evanston.jpg";
-import Chicago from "../../img/chicago.jpg";
+import Chicago from "../../img/Chicago_Daytime.svg";
 
 import {
   AboutMeMenu,
@@ -13,15 +13,17 @@ import {
   MenuLinks,
   Location,
   Info,
-  InfoWrapper
-} from "./aboutMe.styled";
-import { staggerReveal, fadeInUp, staggerText } from "./aboutMe.animations";
+  InfoWrapper,
+  Content,
+  CityImage
+} from "./AboutMe.styled";
+import { staggerReveal, fadeInUp, staggerText } from "./AboutMe.animations";
 
 const AboutMe = ({ initial, clicked }) => {
   const cities = [
-    { name: "Boston", image: Boston },
-    { name: "Evanston", image: Boston },
-    { name: "Chicago", image: Boston }
+    { name: "Boston", image: Chicago },
+    { name: "Evanston", image: Chicago },
+    { name: "Chicago", image: Chicago }
   ];
 
   const [citySelected, setCitySelected] = useState(null);
@@ -31,6 +33,7 @@ const AboutMe = ({ initial, clicked }) => {
   let cityBackground = useRef(null);
   const cityRefs = useRef([...Array(cities.length)].map(() => createRef()));
   let info = useRef(null);
+  let cityImg = useRef(null);
 
   const showCityInfo = city => {
     switch (city) {
@@ -77,7 +80,7 @@ const AboutMe = ({ initial, clicked }) => {
     }
   }, [initial, clicked]);
 
-  const handleCityHover = (e, { name, image }, target) => {
+  const handleCityHover = (e, { name, image }, background, img) => {
     setCitySelected(name);
     gsap.to(e.target, {
       duration: 0.3,
@@ -85,23 +88,23 @@ const AboutMe = ({ initial, clicked }) => {
       skewX: 4,
       ease: "power3.inOut"
     });
-    gsap.to(target, {
+    gsap.to(background, {
       duration: 0,
-      background: `url(${image}) center center`
+      background: `white`
     });
-    gsap.to(target, {
+    gsap.to(background, {
       duration: 0.4,
       opacity: 1,
       ease: "power3.inOut"
     });
-    gsap.from(target, {
-      duration: 0.4,
-      skewY: 2,
-      transformOrigin: "right top"
+    gsap.to(img, {
+      duration: 0,
+      opacity: 1,
+      background: `url(${image})`
     });
   };
 
-  const handleCityHoverExit = (e, target) => {
+  const handleCityHoverExit = (e, background, img) => {
     setCitySelected(null);
     gsap.to(e.target, {
       duration: 0.3,
@@ -109,43 +112,52 @@ const AboutMe = ({ initial, clicked }) => {
       skewX: 0,
       ease: "power3.inOut"
     });
-    gsap.to(target, {
+    gsap.to(background, {
       duration: 0,
       skewY: 0
     });
-    gsap.to(target, {
+    gsap.to(background, {
       duration: 0.4,
       opacity: 0,
       skewY: 0
     });
+    gsap.to(img, {
+      duration: 0,
+      opacity: 0
+    });
   };
 
   return (
-    <AboutMeMenu ref={el => (menu = el)}>
-      <MenuSecondaryBackgroundColor
-        ref={el => (revealMenuBackground = el)}
-      ></MenuSecondaryBackgroundColor>
-      <MenuLayer ref={el => (revealMenu = el)}>
-        <MenuCityBackground
-          ref={el => (cityBackground = el)}
-        ></MenuCityBackground>
+      <AboutMeMenu ref={el => (menu = el)}>
+        <MenuSecondaryBackgroundColor ref={el => (revealMenuBackground = el)} />
+        <MenuLayer ref={el => (revealMenu = el)}>
+          <MenuCityBackground
+            ref={el => (cityBackground = el)}
+          ></MenuCityBackground>
           <MenuLinks>
             {cities.map((city, i) => (
               <Location
                 ref={el => (cityRefs.current[i] = el)}
                 key={city.name}
-                onMouseEnter={e => handleCityHover(e, city, cityBackground)}
-                onMouseOut={e => handleCityHoverExit(e, cityBackground)}
+                onMouseEnter={e =>
+                  handleCityHover(e, city, cityBackground, cityImg)
+                }
+                onMouseOut={e =>
+                  handleCityHoverExit(e, cityBackground, cityImg)
+                }
               >
                 {city.name}
               </Location>
             ))}
           </MenuLinks>
-        <InfoWrapper>
-          <Info ref={el => (info = el)}>{showCityInfo(citySelected)}</Info>
-        </InfoWrapper>
-      </MenuLayer>
-    </AboutMeMenu>
+          <Content>
+            <CityImage ref={el => (cityImg = el)} />
+            <InfoWrapper>
+              <Info ref={el => (info = el)}>{showCityInfo(citySelected)}</Info>
+            </InfoWrapper>
+          </Content>
+        </MenuLayer>
+      </AboutMeMenu>
   );
 };
 

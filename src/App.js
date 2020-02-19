@@ -2,7 +2,7 @@ import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./components/header";
+import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
 
 const GlobalStyle = createGlobalStyle`

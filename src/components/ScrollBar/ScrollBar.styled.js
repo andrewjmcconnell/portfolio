@@ -20,19 +20,30 @@ export const ScrollFill = styled.div.attrs(({ height }) => ({
 `;
 
 export const ScrollButton = styled.button`
-  opacity: ${({ fade }) => fade ? 0 : 1};
-  transition: opacity .3s ease-in-out;
+  opacity: ${({ fade }) => (fade ? 0 : 1)};
+  border: none;
+  background-color: transparent;
+  outline: none;
+  transition: opacity 0.3s ease-in-out;
   position: fixed;
   z-index: 1;
-  right: 20px;
+  left: 50%;
+  right: 50%;
   ${({ position }) => {
     switch (position) {
       case "top":
-        return "top: 10vh;";
+        return "top: 5vh;";
       case "bottom":
-        return "bottom: 10vh;";
+        return "bottom: 5vh;";
       default:
         break;
     }
   }}
+`;
+
+export const ButtonImg = styled.img`
+  src: url(${({ img }) => img});
+  ${({ rotate }) => rotate && "transform: rotate(180deg);"}
+  height: 60px;
+  width: 60px;
 `;

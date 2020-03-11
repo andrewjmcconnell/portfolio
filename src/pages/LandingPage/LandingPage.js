@@ -3,23 +3,32 @@ import styled from "styled-components";
 
 import ScrollBar from "../../components/ScrollBar";
 
+import Space from "../../img/space.svg";
+import Sky from "../../img/sky.jpg";
+import Beach from "../../img/beach.svg";
+import Underwater from "../../img/underwater.svg";
+
 const Blue = styled.div`
-  background-color: blue;
+  background-image: url(${({ img }) => img});
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 `;
 const Yellow = styled.div`
-  background-color: yellow;
+  background-image: url(${({ img }) => img});
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 `;
 const Red = styled.div`
-  background-color: red;
+  background-image: url(${({ img }) => img});
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 `;
 const Purple = styled.div`
-  background-color: purple;
+  background-image: url(${({ img }) => img});
+  background-size: cover;
   height: 100vh;
   width: 100vw;
 `;
@@ -32,10 +41,10 @@ const LandingPage = () => {
   return (
     <Fragment>
       <ScrollBar refs={[blueRef, yellowRef, redRef, purpleRef]} />
-      <Blue ref={blueRef} />
-      <Yellow ref={yellowRef} />
-      <Red ref={redRef} />
-      <Purple ref={purpleRef} />
+      <Blue ref={blueRef} img={Space} />
+      <Yellow ref={yellowRef} img={Sky} />
+      <Red ref={redRef} img={Beach} />
+      <Purple ref={purpleRef} img={Underwater} />
     </Fragment>
   );
 };

@@ -1,35 +1,35 @@
 import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import LandingPage from "./pages/LandingPage";
+import AboutMe from "./pages/AboutMe";
+import withWindowSize from "./utils/withWindowResize";
+import { Box } from "./layouts";
 
 const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+  }
   ::-webkit-scrollbar {
     display: none;
   }
-`
-
-const AppContainer = styled.div`
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  height: 100vh;
-  width: 100vw;
 `;
-
 
 function App() {
   return (
     <Router>
       <GlobalStyle />
-      <AppContainer>
+      <Box minWidth="100%" minHeight="100%" padding="0">
         <Header />
         <Switch>
           <Route exact path="/" component={LandingPage} />
+          <Route exact path="/about" component={AboutMe} />
         </Switch>
-      </AppContainer>
+      </Box>
     </Router>
   );
 }
-export default App;
+export default withWindowSize(App);

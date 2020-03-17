@@ -2,8 +2,8 @@ import React, { useState, useLayoutEffect, Fragment } from "react";
 
 import { ScrollButton, Scroll, ScrollFill, ButtonImg } from "./ScrollBar.styled";
 
-import Arrow from "../../img/arrow_up.svg";
-import Arrow2 from "../../img/arrow_up.svg";
+import ArrowUp from "../../img/upload.svg";
+import ArrowDown from "../../img/download.svg";
 
 const ScrollBar = ({ refs }) => {
   const [refIndex, setRefIndex] = useState(0);
@@ -39,7 +39,7 @@ const ScrollBar = ({ refs }) => {
   return (
     <Fragment>
       <ScrollButton position="top" fade={refIndex === 0} onClick={scroll(-1)}>
-        <ButtonImg img={Arrow} alt="" />
+        <ButtonImg src={ArrowUp} alt="" />
       </ScrollButton>
       <Scroll>
         <ScrollFill height={scrollPercent} />
@@ -49,7 +49,7 @@ const ScrollBar = ({ refs }) => {
         fade={refIndex === refs.length - 1}
         onClick={scroll(1)}
       >
-        <ButtonImg src={Arrow2} alt="" rotate />
+        <ButtonImg src={ArrowDown} alt="" />
       </ScrollButton>
     </Fragment>
   );

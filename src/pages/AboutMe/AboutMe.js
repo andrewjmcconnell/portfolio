@@ -30,7 +30,6 @@ const AboutMe = () => {
   const [displayCity, showCity] = useState(null);
 
   const { isMobile } = useContext(ThemeContext);
-  console.log(isMobile);
   return (
     <Fragment>
       <BackgroundImg

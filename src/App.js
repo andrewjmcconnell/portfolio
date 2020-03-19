@@ -1,5 +1,5 @@
-import React from "react";
-import { createGlobalStyle } from "styled-components";
+import React, { useState } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Menu from "./components/Menu";
@@ -7,6 +7,9 @@ import LandingPage from "./pages/LandingPage";
 import AboutMe from "./pages/AboutMe";
 import withWindowSize from "./utils/withWindowResize";
 import { Box } from "./layouts";
+
+import light from "./themes/light";
+import dark from "./themes/dark";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,16 +22,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+  const stored = localStorage.getItem("theme");
+  console.log(stored);
+  const [isDarkMode, setIsDarkMode] = useState(
+    stored === "true" ? true : false
+  )
   return (
     <Router>
       <GlobalStyle />
-      <Box minWidth="100%" minHeight="100%" padding="0">
-        <Menu />
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/about" component={AboutMe} />
-        </Switch>
-      </Box>
+      <ThemeProvider theme={isDarkMode ? dark : light}>
+        <Box minWidth="100%" minHeight="100%" padding="0">
+          <Menu theme={isDarkMode} toggleTheme={setIsDarkMode} />
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/about" component={AboutMe} />
+          </Switch>
+        </Box>
+      </ThemeProvider>
     </Router>
   );
 }

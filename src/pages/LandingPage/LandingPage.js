@@ -5,14 +5,8 @@ import Intro from "../Intro";
 
 import ScrollBar from "../../components/ScrollBar";
 
-import Space from "../../img/space.svg";
-import Sky from "../../img/sky.jpg";
-import Beach from "../../img/beach.svg";
-import Underwater from "../../img/underwater.svg";
-import Cave from "../../img/cave.svg";
-
 const LandscapeDiv = styled.div`
-  background-image: url(${({ img }) => img});
+  background-image: url(${({ img, theme }) => theme.images[img]});
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -36,13 +30,13 @@ const LandingPage = () => {
   return (
     <Fragment>
       <ScrollBar refs={[space, sky, beach, underwater, cave]} />
-      <Landscape passRef={space} img={Space}>
+      <Landscape passRef={space} img={"space"}>
         <Intro />
       </Landscape>
-      <Landscape passRef={sky} img={Sky} />
-      <Landscape passRef={beach} img={Beach} />
-      <Landscape passRef={underwater} img={Underwater} />
-      <Landscape passRef={cave} img={Cave} />
+      <Landscape passRef={sky} img={"sky"} />
+      <Landscape passRef={beach} img={"beach"} />
+      <Landscape passRef={underwater} img={"underwater"} />
+      <Landscape passRef={cave} img={"cave"} />
     </Fragment>
   );
 };

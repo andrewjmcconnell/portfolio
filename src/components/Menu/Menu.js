@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useContext} from "react";
 import { withRouter } from "react-router-dom";
-import styled from "styled-components";
+import styled, {ThemeContext} from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Box } from "../../layouts";
 
@@ -90,14 +90,24 @@ const ButtonEffect = styled(NavLink)`
   }
 `;
 
-const Menu = ({ location }) => {
+const Menu = ({ location, theme, toggleTheme }) => {
   const home = location.pathname === "/";
+  const context = useContext(ThemeContext);
+  console.log(context);
   return (
     <MenuWrapper>
       <ButtonWrapper>
         <ButtonEffect to={home ? "/about" : "/"}>
           <ButtonContent>{home ? "About Me" : "Close"}</ButtonContent>
         </ButtonEffect>
+      </ButtonWrapper>
+      <ButtonWrapper>
+        <button onClick={() => {
+          toggleTheme(!theme);
+          localStorage.setItem("theme", !theme);
+        }}>
+          <ButtonContent>{theme ? "Set Light Mode" : "Set Dark Mode"}</ButtonContent>
+        </button>
       </ButtonWrapper>
     </MenuWrapper>
   );

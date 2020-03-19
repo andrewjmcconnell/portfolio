@@ -26,7 +26,7 @@ export const Header = styled.div`
   font-weight: bold;
   font-family: Graduate;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.colors.text};
   background: 50% 100% / 50% 50% no-repeat
     radial-gradient(circle at bottom, #fff, transparent, transparent);
   background-clip: text;

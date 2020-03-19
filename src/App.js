@@ -2,7 +2,7 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Header from "./components/Header";
+import Menu from "./components/Menu";
 import LandingPage from "./pages/LandingPage";
 import AboutMe from "./pages/AboutMe";
 import withWindowSize from "./utils/withWindowResize";
@@ -23,7 +23,7 @@ function App() {
     <Router>
       <GlobalStyle />
       <Box minWidth="100%" minHeight="100%" padding="0">
-        <Header />
+        <Menu />
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/about" component={AboutMe} />

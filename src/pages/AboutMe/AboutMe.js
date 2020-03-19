@@ -1,12 +1,13 @@
 import React, { useState, useContext, Fragment } from "react";
 import styled, { ThemeContext } from "styled-components";
-import { Background } from "./AboutMe.styled";
+
+import BackgroundImg from "../../components/BackgroundImg";
 
 import Boston from "../../img/boston.jpg";
 import Evanston from "../../img/evanston.jpg";
 import Chicago from "../../img/Chicago_Daytime.svg";
 
-import { Box, Stack, Center } from "../../layouts";
+import { Box, Stack, Center, Text } from "../../layouts";
 
 const CityName = styled.div`
   width: 100%;
@@ -32,54 +33,36 @@ const AboutMe = () => {
   console.log(isMobile);
   return (
     <Fragment>
-      <Background src={Chicago} animate={!!displayCity} isMobile={isMobile} />
+      <BackgroundImg
+        src={Chicago}
+        animate={!!displayCity}
+        isMobile={isMobile}
+      />
       <Box
-        padding="50vh 20vw"
-        background={displayCity ? "transparent" : "red"}
+        padding={isMobile ? "30vh 0" : "40vh 0"}
+        background={displayCity ? "transparent" : "#0099ff"}
         minHeight="100vh"
         minWidth="100vw"
         extraStyles={`transition: background-color 0.5s ease;`}
       >
-        {isMobile ? (
-          <Stack>
-            {cities.map((city, i) => (
-              <Center key={city.name}>
-                <CityName
-                  open={displayCity && displayCity.name === city.name}
+        <Center intrinsic>
+          <Box>
+            <Stack childGap="50px">
+              {cities.map((city, i) => (
+                <Box
+                  key={city.name}
+                  width="100%"
                   onMouseEnter={() => showCity(city)}
                   onMouseLeave={() => showCity(null)}
                 >
-                  <Stack>
-                    <Center>{city.name}</Center>
-                    {displayCity && displayCity.name === city.name && (
-                      <Center>{displayCity.text}</Center>
-                    )}
-                  </Stack>
-                </CityName>
-              </Center>
-            ))}
-          </Stack>
-        ) : (
-          <Stack direction="row" fullHeight>
-            <Box width="50%" minHeight="100%">
-              <Stack>
-                {cities.map((city, i) => (
-                  <Box
-                    key={city.name}
-                    width="100%"
-                    onMouseEnter={() => showCity(city)}
-                    onMouseLeave={() => showCity(null)}
-                  >
-                    {city.name}
-                  </Box>
-                ))}
-              </Stack>
-            </Box>
-            <Box width="50%" minHeight="100%">
-              {!!displayCity && displayCity.text}
-            </Box>
-          </Stack>
-        )}
+                  <Center intrinsic>
+                    <Text>{city.name}</Text>
+                  </Center>
+                </Box>
+              ))}
+            </Stack>
+          </Box>
+        </Center>
       </Box>
     </Fragment>
   );

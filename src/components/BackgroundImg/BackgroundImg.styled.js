@@ -24,7 +24,7 @@ const shiftOut = keyframes`
   }
 `;
 
-export const Background = styled.img`
+export const BackgroundImg = styled.img`
   position: absolute;
   z-index: -1;
   animation: ${({ animate }) => (!!animate ? shiftOut : shiftIn)} 1s

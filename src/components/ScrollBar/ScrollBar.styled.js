@@ -1,22 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const Scroll = styled.div`
-  height: 75vh;
-  background: transparent;
-  width: 8px;
-  position: fixed;
-  right: 20px;
-  z-index: 1;
-  top: 12.5vh;
-  bottom: 12.5vh;
-`;
-
-export const ScrollFill = styled.div.attrs(({ height }) => ({
-  style: {
-    height: `${height}%`
+const bounce = keyframes`
+  0%, 100% {
+    transform: scale(1.0);
   }
-}))`
-  background-color: green;
+
+  50% {
+    transform: scale(1.3);
+  }
 `;
 
 export const ScrollButton = styled.button`
@@ -28,7 +19,8 @@ export const ScrollButton = styled.button`
   position: fixed;
   z-index: 1;
   left: 50%;
-  right: 50%;
+  transform: translateX(-50%);
+
   ${({ position }) => {
     switch (position) {
       case "top":
@@ -46,4 +38,9 @@ export const ButtonImg = styled.img`
   ${({ rotate }) => rotate && "transform: rotate(180deg);"}
   height: 60px;
   width: 60px;
+
+  &:hover {
+    cursor: pointer;
+    animation: ${bounce} 0.5s ease-out;
+  }
 `;

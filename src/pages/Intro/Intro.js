@@ -15,7 +15,6 @@ const Intro = () => {
           <Text
             fontSize="30px"
             textAlign="center"
-            color="white"
             fontFamily="Graduate"
           >
             Frontend Engineer

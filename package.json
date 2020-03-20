@@ -15,7 +15,8 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.0.0",
+    "tabler-icons": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

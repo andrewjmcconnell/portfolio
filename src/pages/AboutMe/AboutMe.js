@@ -3,8 +3,6 @@ import styled, { ThemeContext } from "styled-components";
 
 import BackgroundImg from "../../components/BackgroundImg";
 
-import Boston from "../../img/boston.jpg";
-import Evanston from "../../img/evanston.jpg";
 import Chicago from "../../img/Chicago_Daytime.svg";
 
 import { Box, Stack, Center, Text } from "../../layouts";

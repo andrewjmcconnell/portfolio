@@ -26,7 +26,7 @@ function App() {
   console.log(stored);
   const [isDarkMode, setIsDarkMode] = useState(
     stored === "true" ? true : false
-  )
+  );
   return (
     <Router>
       <GlobalStyle />

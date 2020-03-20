@@ -1,115 +1,62 @@
-import React, {useContext} from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import styled, {ThemeContext} from "styled-components";
-import { NavLink } from "react-router-dom";
-import { Box } from "../../layouts";
+import { ThemeProvider } from "styled-components";
 
-const MenuWrapper = styled.div`
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-`;
+import face from "tabler-icons/icons/face-id.svg";
+import exit from "tabler-icons/icons/corner-down-left.svg";
+import moon from "tabler-icons/icons/moon.svg";
+import sun from "tabler-icons/icons/sun.svg";
+import mail from "tabler-icons/icons/mail.svg";
 
-const ButtonWrapper = styled.div`
-  text-align: center;
-`;
-
-const ButtonContent = styled.div`
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  line-height: 50px;
-  color: #ffffff;
-  font-weight: 400;
-  position: relative;
-  z-index: 999;
-  transition: 0.3s ease-in-out;
-
-  &:hover {
-    color: #000000;
-    transition: 0.3s ease-in-out;
-  }
-`;
-
-const ButtonEffect = styled(NavLink)`
-  width: 200px;
-  height: 50px;
-  line-height: 50px;
-  display: inline-block;
-  position: relative;
-  background-color: #5c6ac4;
-  border-radius: 50px;
-  overflow: hidden;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  z-index: 1;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 140%;
-    height: 100%;
-    background-color: #ffffff;
-    transform: rotate(10deg);
-    top: -150%;
-    left: 20%;
-    transition: 0.3s ease-in-out;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    width: 140%;
-    height: 120%;
-    background-color: #ffffff;
-    transform: rotate(10deg);
-    top: 150%;
-    left: -20%;
-    transition: 0.3s ease-in-out;
-  }
-
-  &:hover {
-    background-color: #ffffff;
-    transition: 0s linear;
-    transition-delay: 0.3s;
-  }
-
-  &:hover:before {
-    top: -20px;
-    left: -20%;
-    transition: 0.3s ease-in-out;
-  }
-
-  &:hover:after {
-    top: 10px;
-    left: -23%;
-    transition: 0.3s ease-in-out;
-  }
-`;
+import {
+  Base,
+  MenuDiv,
+  Icon,
+  Bar,
+  Icons,
+  ButtonOne,
+  ButtonTwo,
+  ButtonThree,
+  Section,
+  CoverOne,
+  CoverTwo,
+  Content,
+  Top,
+  Bottom
+} from "./Menu.styled";
 
 const Menu = ({ location, theme, toggleTheme }) => {
   const home = location.pathname === "/";
-  const context = useContext(ThemeContext);
-  console.log(context);
+  const [close, setClose] = useState(false);
   return (
-    <MenuWrapper>
-      <ButtonWrapper>
-        <ButtonEffect to={home ? "/about" : "/"}>
-          <ButtonContent>{home ? "About Me" : "Close"}</ButtonContent>
-        </ButtonEffect>
-      </ButtonWrapper>
-      <ButtonWrapper>
-        <button onClick={() => {
-          toggleTheme(!theme);
-          localStorage.setItem("theme", !theme);
-        }}>
-          <ButtonContent>{theme ? "Set Light Mode" : "Set Dark Mode"}</ButtonContent>
-        </button>
-      </ButtonWrapper>
-    </MenuWrapper>
+    <ThemeProvider theme={{ close: close }}>
+      <Base>
+        <MenuDiv onClick={() => setClose(!close)}>
+          <Icon>
+            <Bar />
+          </Icon>
+        </MenuDiv>
+        <Icons>
+          <ButtonOne src={home ? face : exit} alt="" />
+          <ButtonTwo src={theme ? sun : moon} alt="" />
+          <ButtonThree src={mail} alt="" />
+        </Icons>
+        <Section>
+          <CoverOne>
+            <CoverTwo>
+              <Content
+                onClick={() => {
+                  toggleTheme(!theme);
+                  localStorage.setItem("theme", theme);
+                }}
+              />
+            </CoverTwo>
+          </CoverOne>
+          <Top to={home ? "/about" : "/"}></Top>
+          <Bottom onClick={() => {}} />
+        </Section>
+      </Base>
+    </ThemeProvider>
   );
 };
 export default withRouter(Menu);

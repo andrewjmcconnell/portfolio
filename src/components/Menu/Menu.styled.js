@@ -25,7 +25,7 @@ export const Base = styled.div`
 
 export const MenuDiv = styled.div`
   z-index: 100;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.background};
   position: absolute;
   top: 0px;
   left: 0px;
@@ -41,7 +41,7 @@ export const MenuDiv = styled.div`
     width: 150px;
     height: 150px;
     transition: all 1s cubic-bezier(0.50, 0, 0.05, 1.75), background-color 1s ease;
-    background-color: #21264B;
+    background-color: ${({ theme }) => theme.colors.background};
   `}
 `;
 
@@ -65,7 +65,7 @@ export const Icon = styled.div`
     left: 0px;
     right: 0px;
     border-radius: 5px;
-    background-color: #21264b;
+    background-color: ${({ theme }) => theme.colors.icon};
   }
 
   &:before {
@@ -82,7 +82,7 @@ export const Icon = styled.div`
   &:before,
   &:after {
     top: 10px;
-    background-color: #FFFFFF;
+    background-color: ${({ theme }) => theme.colors.icon};
     transition: top 0.5s linear, transform 0.5s ease 0.5s, background-color 0.75s ease 0.25s;
   }
   &:before {
@@ -104,12 +104,12 @@ export const Bar = styled.div`
   left: 0px;
   right: 0px;
   border-radius: 5px;
-  background-color: #21264b;
+  background-color: ${({ theme }) => theme.colors.icon};
 
   ${({ theme }) =>
     theme.close &&
     `
-    background-color: #FFFFFF;
+    background-color: ${({ theme }) => theme.colors.icon};
     opacity: 0;
   `}
 `;
@@ -195,6 +195,7 @@ export const Section = styled.div`
   transform-origin: 100% 100%;
   transform: rotate(135deg);
 `;
+
 export const CoverOne = styled.div`
   transform-origin: 100% 100%;
   & {
@@ -227,6 +228,7 @@ export const CoverOne = styled.div`
   }
   `}
 `;
+
 export const CoverTwo = styled.div`
   position: absolute;
   width: 600px;
@@ -259,7 +261,10 @@ export const CoverTwo = styled.div`
   tranform-origin: 0% 100%;
   `}
 `;
+
 export const Content = styled.button`
+  border-width: 0;
+  cursor: pointer;
   position: absolute;
   width: 600px;
   height: 600px;
@@ -296,7 +301,7 @@ export const Content = styled.button`
 `;
 
 export const Top = styled(NavLink)`
-  z-index: 94;
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
   width: 100px;
   height: 100px;
   position: absolute;
@@ -306,7 +311,7 @@ export const Top = styled(NavLink)`
   transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1),
     height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
   &:hover {
-    background-color: #eaeaea;
+    background-color: ${({ theme }) => theme.colors.background};
   }
 
   transform: rotate(164deg);
@@ -322,6 +327,8 @@ export const Top = styled(NavLink)`
 `;
 
 export const Bottom = styled.button`
+  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  cursor: pointer;
   padding: 0;
   border-width: 0px;
   z-index: 94;
@@ -334,36 +341,11 @@ export const Bottom = styled.button`
   transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1),
     height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
   &:hover {
-    background-color: #eaeaea;
+    background-color: ${({ theme }) => theme.colors.background};
   }
 
   transform: rotate(286deg);
   border-bottom-right-radius: 400px;
-
-  ${({ theme }) =>
-    theme.close &&
-    `
-      width:300px;
-      height:300px;
-      transition: width 1.25s cubic-bezier(0.50, 0, 0.05, 2), height 1.25s cubic-bezier(0.50, 0, 0.05, 2);
-  `}
-`;
-
-export const SectionStatic = styled.div`
-  > * {
-    z-index: 94;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    transform-origin: 0% 0%;
-    transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1),
-      height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
-    &:hover {
-      background-color: #eaeaea;
-    }
-  }
 
   ${({ theme }) =>
     theme.close &&

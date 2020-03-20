@@ -34,8 +34,6 @@ export const ScrollButton = styled.button`
 `;
 
 export const ButtonImg = styled.img`
-  src: url(${({ img }) => img});
-  ${({ rotate }) => rotate && "transform: rotate(180deg);"}
   height: 60px;
   width: 60px;
 

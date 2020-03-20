@@ -7,8 +7,10 @@ import Cave from "../img/cave.svg";
 
 export default {
   colors: {
-    text: "white",
-    icon: "white"
+    text: "#ECEFF4",
+    background: "#ECEFF4",
+    backgroundSecondary: "#E5E9F0",
+    icon: "#2E3440"
     // background: "#ECEFF4",
     // cardBackground: "#E5E9F0",
     // buttonBackground: "#5E81AC",

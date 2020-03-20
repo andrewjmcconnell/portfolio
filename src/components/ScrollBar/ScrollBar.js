@@ -2,8 +2,8 @@ import React, { useState, useLayoutEffect, Fragment } from "react";
 
 import { ScrollButton, ButtonImg } from "./ScrollBar.styled";
 
-import ArrowUp from "../../img/upload.svg";
-import ArrowDown from "../../img/download.svg";
+import ArrowUp from "tabler-icons/icons/arrow-up-circle.svg";
+import ArrowDown from "tabler-icons/icons/arrow-down-circle.svg";
 
 const ScrollBar = ({ refs }) => {
   const [refIndex, setRefIndex] = useState(0);

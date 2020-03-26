@@ -45,7 +45,7 @@ export const MobileIcon = styled.div`
 `;
 
 export const MobileBar = styled.div`
-  position: absolute;
+  position: fixed;
   top: 18px;
   width: 30px;
   height: 3px;
@@ -64,6 +64,7 @@ export const DropdownBar = styled.div`
 `;
 
 export const MobileButtonLink = styled(NavLink)`
+  position: fixed;
   margin-top: 0.5rem;
   height: 2rem;
   width: 2rem;
@@ -78,6 +79,7 @@ export const MobileButtonLink = styled(NavLink)`
 `;
 
 export const MobileButton = styled.button`
+  position: fixed;
   padding: 0;
   margin-top: 0.5rem;
   height: 2rem;
@@ -93,6 +95,5 @@ export const MobileButton = styled.button`
 `;
 
 export const MobileImg = styled.img`
-  top: 50%;
   transform: translate(0.25rem);
 `;

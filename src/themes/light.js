@@ -7,15 +7,17 @@ import Cave from "../img/cave.svg";
 
 export default {
   colors: {
-    text: "#ECEFF4",
-    background: "#ECEFF4",
-    backgroundSecondary: "#E5E9F0",
-    icon: "#2E3440"
-    // background: "#ECEFF4",
-    // cardBackground: "#E5E9F0",
-    // buttonBackground: "#5E81AC",
-    // textColor: "#2E3440",
-    // buttonColor: "#ECEFF4"
+    primary: "#6200EE",
+    primaryVariant: "#3700B3",
+    secondary: "#03DAC6",
+    secondaryVariant: "#018786",
+    background: "#FFFFFF",
+    surface: "#FFFFFF",
+    error: "#B00020",
+    onPrimary: "#FFFFFF",
+    onSecondary: "#000000",
+    onBackground: "#000000",
+    onError: "#FFFFFF"
   },
   images: {
     space: Space,

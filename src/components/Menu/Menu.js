@@ -96,7 +96,8 @@ const Menu = ({ location, theme, toggleTheme }) => {
 
   return (
     <ThemeProvider theme={{ close: close }}>
-      {isMobile ? MobileMenu : DesktopMenu}
+      {/* {isMobile ? MobileMenu : DesktopMenu} */}
+      {DesktopMenu}
     </ThemeProvider>
   );
 };

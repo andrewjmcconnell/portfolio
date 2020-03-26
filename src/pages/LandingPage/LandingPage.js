@@ -2,6 +2,7 @@ import React, { Fragment, useRef, Suspense } from "react";
 import styled from "styled-components";
 
 import Intro from "../Intro";
+import Technologies from "../Technologies";
 
 import ScrollBar from "../../components/ScrollBar";
 
@@ -14,12 +15,10 @@ const LandscapeDiv = styled.div`
 `;
 
 const Landscape = ({ passRef, img, children }) => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <LandscapeDiv ref={passRef} img={img}>
-      {children ? children : <Fragment />}
-    </LandscapeDiv>
-  </Suspense>
-)
+  <LandscapeDiv ref={passRef} img={img}>
+    {children ? children : <Fragment />}
+  </LandscapeDiv>
+);
 
 const LandingPage = () => {
   const space = useRef(null);
@@ -33,7 +32,9 @@ const LandingPage = () => {
       <Landscape passRef={space} img={"space"}>
         <Intro />
       </Landscape>
-      <Landscape passRef={sky} img={"sky"} />
+      <Landscape passRef={sky} img={"sky"}>
+        <Technologies />
+      </Landscape>
       <Landscape passRef={beach} img={"beach"} />
       <Landscape passRef={underwater} img={"underwater"} />
       <Landscape passRef={cave} img={"cave"} />

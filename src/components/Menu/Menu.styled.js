@@ -5,7 +5,6 @@ export const Base = styled.div`
   z-index: 90;
   overflow-x: hidden;
   position: fixed;
-  position: fixed;
   top: 0px;
   left: 0px;
   background-color: #ffffff;
@@ -32,6 +31,7 @@ export const MenuDiv = styled.div`
   width: 100px;
   height: 100px;
   border-bottom-right-radius: 200px;
+  box-shadow: 5px 5px 2.5px grey;
   cursor: pointer;
   transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1), background-color 1s ease;
 
@@ -65,7 +65,7 @@ export const Icon = styled.div`
     left: 0px;
     right: 0px;
     border-radius: 5px;
-    background-color: ${({ theme }) => theme.colors.icon};
+    background-color: ${({ theme }) => theme.colors.onBackground};
   }
 
   &:before {
@@ -82,7 +82,7 @@ export const Icon = styled.div`
   &:before,
   &:after {
     top: 10px;
-    background-color: ${({ theme }) => theme.colors.icon};
+    background-color: ${({ theme }) => theme.colors.onBackground};
     transition: top 0.5s linear, transform 0.5s ease 0.5s, background-color 0.75s ease 0.25s;
   }
   &:before {
@@ -104,12 +104,12 @@ export const Bar = styled.div`
   left: 0px;
   right: 0px;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.colors.icon};
+  background-color: ${({ theme }) => theme.colors.onBackground};
 
   ${({ theme }) =>
     theme.close &&
     `
-    background-color: ${({ theme }) => theme.colors.icon};
+    background-color: ${({ theme }) => theme.colors.onBackground};
     opacity: 0;
   `}
 `;
@@ -272,7 +272,7 @@ export const Content = styled.button`
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  background-color: #ee1b59;
+  background-color: ${({ theme }) => theme.colors.primary};
   top: 100%;
   left: 0%;
   transform: translate(-50%, -50%);
@@ -289,19 +289,18 @@ export const Content = styled.button`
   height: 600px;
 
   border-radius: 100%;
-  background-color: #EE1B59;
   top: 100%;
   left: 0%;
   transform: translate(-50%, -50%);
   transition: background-color 0s, width 1.1s cubic-bezier(0.50, 0, 0.05, 1.75) 0.25s, height 1.1s cubic-bezier(0.50, 0, 0.05, 2) 0.25s;
   &:hover {
-     background-color:#DD1350;
+     background-color: ${({ theme }) => theme.colors.primaryVariant};
   }
   `}
 `;
 
 export const Top = styled(NavLink)`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  background-color: ${({ theme }) => theme.colors.background};
   width: 100px;
   height: 100px;
   position: absolute;
@@ -311,7 +310,7 @@ export const Top = styled(NavLink)`
   transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1),
     height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
   &:hover {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.primaryVariant};
   }
 
   transform: rotate(164deg);
@@ -327,7 +326,7 @@ export const Top = styled(NavLink)`
 `;
 
 export const Bottom = styled.button`
-  background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+  background-color: ${({ theme }) => theme.colors.background};
   cursor: pointer;
   padding: 0;
   border-width: 0px;
@@ -341,7 +340,7 @@ export const Bottom = styled.button`
   transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1),
     height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
   &:hover {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.primaryVariant};
   }
 
   transform: rotate(286deg);

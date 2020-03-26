@@ -24,9 +24,9 @@ export const ScrollButton = styled.button`
   ${({ position }) => {
     switch (position) {
       case "top":
-        return "top: 5vh;";
+        return "top: 2vh;";
       case "bottom":
-        return "bottom: 5vh;";
+        return "bottom: 2vh;";
       default:
         break;
     }

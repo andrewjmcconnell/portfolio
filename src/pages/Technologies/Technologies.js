@@ -100,8 +100,8 @@ const Technologies = () => {
         <Stack childGap="3vh">
           <Center intrinsic>
             <Text
-              fontSize="3vh"
-              lineHeight="3vh"
+              fontSize="5vmax"
+              lineHeight="5vmax"
               fontWeight="bold"
               fontFamily="Graduate"
               textAlign="center"

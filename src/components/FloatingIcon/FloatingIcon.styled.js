@@ -21,8 +21,8 @@ export const Container = styled.div`
 
 export const Template = styled.div`
   display: flex;
-  width: 15vmin;
-  height: 15vmin;
+  width: 12vmin;
+  height: 12vmin;
   border: 5px ${({ theme }) => theme.colors.surface} solid;
   border-radius: 50%;
   overflow: hidden;

@@ -95,35 +95,27 @@ const CICD = (
 
 const Technologies = () => {
   return (
-    <Box padding="10vh 0" minWidth="100%" minHeight="100%">
+    <Box padding="14vh 0" minWidth="100%" minHeight="100%">
       <Center intrinsic>
-        <Stack childGap="50px">
-          <Box
-            background="grey"
-            borderColor="black"
-            borderRadius="4px"
-            borderSize="1px"
-            minWidth="60vw"
-          >
-            <Center intrinsic>
-              <Text>Technologies I Work With</Text>
-            </Center>
-          </Box>
+        <Stack childGap="3vh">
+          <Center intrinsic>
+            <Text
+              fontSize="3vh"
+              lineHeight="3vh"
+              fontWeight="bold"
+              fontFamily="Graduate"
+              textAlign="center"
+              extraStyles="background-clip: text;"
+            >
+              Technologies I Work With
+            </Text>
+          </Center>
           <Center intrinsic>
             <Box padding="0 5vw">
               <Stack>
-                <Center intrinsic>
-                  <Text>Application Development</Text>
-                  {AppDevelopment}
-                </Center>
-                <Center intrinsic>
-                  <Text>Source Control</Text>
-                  {SourceControl}
-                </Center>
-                <Center intrinsic>
-                  <Text>CI/CD</Text>
-                  {CICD}
-                </Center>
+                <Center intrinsic>{AppDevelopment}</Center>
+                <Center intrinsic>{SourceControl}</Center>
+                <Center intrinsic>{CICD}</Center>
               </Stack>
             </Box>
           </Center>

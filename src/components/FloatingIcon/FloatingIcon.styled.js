@@ -21,13 +21,13 @@ export const Container = styled.div`
 
 export const Template = styled.div`
   display: flex;
-  width: 10vmin;
-  height: 10vmin;
+  width: 15vmin;
+  height: 15vmin;
   border: 5px ${({ theme }) => theme.colors.surface} solid;
   border-radius: 50%;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.background};
-  
+  cursor: pointer;
   justify-content: center;
   // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
   animation: ${float} 6s ease infinite;

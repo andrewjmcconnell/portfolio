@@ -18,8 +18,8 @@ export const ScrollButton = styled.button`
   transition: opacity 0.3s ease-in-out;
   position: fixed;
   z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
+  ${({ theme }) =>
+    theme.isMobile ? "right: 1vw;" : "transform: translateX(-50%); left: 50%;"}
 
   ${({ position }) => {
     switch (position) {

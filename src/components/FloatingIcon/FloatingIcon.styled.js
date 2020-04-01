@@ -37,3 +37,11 @@ export const Template = styled.div`
     height: 100%;
   }
 `;
+
+export const Icon = styled.img`
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+`;

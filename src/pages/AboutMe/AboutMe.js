@@ -1,4 +1,5 @@
 import React from "react";
+import { withTheme } from "styled-components";
 
 import Boston from "../../img/boston.png";
 import Northwestern from "../../img/northwestern.png";
@@ -18,9 +19,9 @@ const cities = [
   { name: "Chicago", image: Chicago, text: "YOU'RE IN CHICAGO" }
 ];
 
-const AboutMe = () => (
+const AboutMe = ({ theme }) => (
   <Box
-    padding="50px 15vw"
+    padding={theme.isMobile ? "50px 15vw" : "25vh 15vw"}
     background="#0099ff"
     minHeight="100vh"
     minWidth="100vw"
@@ -28,7 +29,7 @@ const AboutMe = () => (
   >
     <Center intrinsic>
       <Box>
-        <Stack childGap="3rem">
+        <Stack direction={theme.isMobile ? "column" : "row"} childGap="3rem">
           {cities.map((city, i) => (
             <HiddenCard
               key={city.name}
@@ -43,4 +44,4 @@ const AboutMe = () => (
   </Box>
 );
 
-export default AboutMe;
+export default withTheme(AboutMe);

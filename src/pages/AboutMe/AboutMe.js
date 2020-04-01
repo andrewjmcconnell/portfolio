@@ -1,68 +1,46 @@
-import React, { useState, useContext, Fragment } from "react";
-import styled, { ThemeContext } from "styled-components";
+import React from "react";
 
-import BackgroundImg from "../../components/BackgroundImg";
+import Boston from "../../img/boston.png";
+import Northwestern from "../../img/northwestern.png";
+import Chicago from "../../img/chicago.png";
 
-import Chicago from "../../img/Chicago_Daytime.svg";
+import { Box, Stack, Center } from "../../layouts";
+import HiddenCard from "../../components/HiddenCard";
 
-import { Box, Stack, Center, Text } from "../../layouts";
+const cities = [
+  {
+    name: "Boston",
+    image: Boston,
+    text:
+      "I was born and raised just outside of Boston, Massachusetts. I went to high school at BB&N in Cambridge and blah blah blah blah blah."
+  },
+  { name: "Evanston", image: Northwestern, text: "YOU'RE IN EVANSTON" },
+  { name: "Chicago", image: Chicago, text: "YOU'RE IN CHICAGO" }
+];
 
-const CityName = styled.div`
-  width: 100%;
-  height: ${({ open }) => (open ? "fit-content" : "10px")};
-  transition: height 1s ease;
-`;
-
-const AboutMe = () => {
-  const cities = [
-    {
-      name: "Boston",
-      image: Chicago,
-      text:
-        "I was born and raised just outside of Boston, Massachusetts. I went to high school at BB&N in Cambridge and blah blah blah blah blah."
-    },
-    { name: "Evanston", image: Chicago, text: "YOU'RE IN EVANSTON" },
-    { name: "Chicago", image: Chicago, text: "YOU'RE IN CHICAGO" }
-  ];
-
-  const [displayCity, showCity] = useState(null);
-
-  const { isMobile } = useContext(ThemeContext);
-  return (
-    <Fragment>
-      <BackgroundImg
-        src={Chicago}
-        animate={!!displayCity}
-        isMobile={isMobile}
-      />
-      <Box
-        padding={isMobile ? "30vh 0" : "40vh 0"}
-        background={displayCity ? "transparent" : "#0099ff"}
-        minHeight="100vh"
-        minWidth="100vw"
-        extraStyles={`transition: background-color 0.5s ease;`}
-      >
-        <Center intrinsic>
-          <Box>
-            <Stack childGap="50px">
-              {cities.map((city, i) => (
-                <Box
-                  key={city.name}
-                  width="100%"
-                  onMouseEnter={() => showCity(city)}
-                  onMouseLeave={() => showCity(null)}
-                >
-                  <Center intrinsic>
-                    <Text>{city.name}</Text>
-                  </Center>
-                </Box>
-              ))}
-            </Stack>
-          </Box>
-        </Center>
+const AboutMe = () => (
+  <Box
+    padding="50px 15vw"
+    background="#0099ff"
+    minHeight="100vh"
+    minWidth="100vw"
+    extraStyles={`transition: background-color 0.5s ease;`}
+  >
+    <Center intrinsic>
+      <Box>
+        <Stack childGap="3rem">
+          {cities.map((city, i) => (
+            <HiddenCard
+              key={city.name}
+              icon={city.image}
+              title={city.name}
+              description={city.text}
+            />
+          ))}
+        </Stack>
       </Box>
-    </Fragment>
-  );
-};
+    </Center>
+  </Box>
+);
 
 export default AboutMe;

@@ -21,14 +21,6 @@ import Kubernetes from "../../img/technologies/kubernetes.png";
 import Argo from "../../img/technologies/argo.png";
 import EC2 from "../../img/technologies/ec2.png";
 
-const Icon = styled.img`
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-`;
-
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -36,60 +28,93 @@ const Row = styled.div`
   justify-content: center;
 `;
 
+const AppDevelopmentContent = [
+  {
+    img: ReactJs,
+    content:
+      "I primarily use React.js for web development and React-Native for mobile development, at work and at home."
+  },
+  {
+    img: Redux,
+    content: "I use Redux if state management is necessary and complex enough."
+  },
+  {
+    img: NodeJs,
+    content: "For very simple backends and shell scripts that wouldn't work in bash, I use NodeJs (sometimes Python)."
+  },
+  {
+    img: Swift,
+    content: "My first mobile experience came in native iOS development using Swift."
+  },
+  {
+    img: Python,
+    content: "In college I primarily used Python, especially for data analytics and machine learning."
+  },
+  {
+    img: Nginx,
+    content: "I use NGINX as a web server (including for this site)."
+  }
+];
+
+const SourceControlContent = [
+  {
+    img: Git,
+    content: "I use Git CLI for basic source control."
+  },
+  {
+    img: Github,
+    content: "I use Github for repo management, running CI/CD, "
+  },
+  {
+    img: Gitkraken,
+    content: "I use GitKraken as an easy GUI for git branch management."
+  }
+];
+
+const CICDContent = [
+  {
+    img: Jenkins,
+    content: "At work we use mostly use Jenkins for CI/CD, including building Quay images for deployment."
+  },
+  {
+    img: CircleCI,
+    content: "Sometimes I use CircleCI to run some testing CI before building a git commit."
+  },
+  {
+    img: Kubernetes,
+    content: "At work we use Kubernetes for containerization and management of applications in different clusters and namespaces."
+  },
+  {
+    img: Argo,
+    content: "We use Argo CD to manage deployment of Quay repos to Kubernetes."
+  },
+  {
+    img: EC2,
+    content: "I use AWS EC2 for virtual machine hosting, which is how this website is run."
+  }
+];
+
 const AppDevelopment = (
   <Row>
-    <FloatingIcon>
-      <Icon src={ReactJs} alt="React" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Redux} alt="Redux" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={NodeJs} alt="Node" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Swift} alt="Swift" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Python} alt="Python" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Nginx} alt="Nginx" />
-    </FloatingIcon>
+    {AppDevelopmentContent.map(content => (
+      <FloatingIcon src={content.img} tooltipContent={content.content} />
+    ))}
   </Row>
 );
 
 const SourceControl = (
   <Row>
-    <FloatingIcon>
-      <Icon src={Git} alt="Git" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Github} alt="Github" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Gitkraken} alt="Gitkraken" />
-    </FloatingIcon>
+    {SourceControlContent.map(content => (
+      <FloatingIcon src={content.img} tooltipContent={content.content} />
+    ))}
   </Row>
 );
 
 const CICD = (
   <Row>
-    <FloatingIcon>
-      <Icon src={Jenkins} alt="Jenkins" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={CircleCI} alt="CircleCI" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Kubernetes} alt="Kubernetes" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={Argo} alt="Argo" />
-    </FloatingIcon>
-    <FloatingIcon>
-      <Icon src={EC2} alt="EC2" />
-    </FloatingIcon>
+    {CICDContent.map(content => (
+      <FloatingIcon src={content.img} tooltipContent={content.content} />
+    ))}
   </Row>
 );
 

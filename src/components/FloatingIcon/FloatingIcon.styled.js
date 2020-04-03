@@ -16,10 +16,12 @@ const float = keyframes`
 `;
 
 export const Container = styled.div`
+  position: relative;
   margin: 10px;
 `;
 
 export const Template = styled.div`
+  position: relative;
   display: flex;
   width: 12vmin;
   height: 12vmin;
@@ -44,4 +46,48 @@ export const Icon = styled.img`
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+`;
+
+export const TooltipWrapper = styled.div`
+  position: absolute;
+  z-index: 1;
+  left: -5vmin;
+  top: 12vmin;
+  width: 24vmin;
+  font-weight: 400;
+  text-transform: none;
+  word-wrap: normal;
+  font-size: 12px;
+
+  display: inline-block;
+
+  margin-top: 3vmin;
+
+  animation: ${float} 6s ease infinite;
+
+  ${({ display }) => (display ? "opacity: 1;" : "opacity: 0;")}
+`;
+
+export const TooltipArrow = styled.div`
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-right-color: transparent;
+  border-style: solid;
+`;
+
+export const TooltipText = styled.div`
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
 `;

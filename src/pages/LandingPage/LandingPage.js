@@ -1,8 +1,9 @@
-import React, { Fragment, useRef, Suspense } from "react";
+import React, { Fragment, useRef } from "react";
 import styled from "styled-components";
 
 import Intro from "../Intro";
 import Technologies from "../Technologies";
+import Companies from "../Companies";
 
 import ScrollBar from "../../components/ScrollBar";
 
@@ -35,7 +36,9 @@ const LandingPage = () => {
       <Landscape passRef={sky} img={"sky"}>
         <Technologies />
       </Landscape>
-      <Landscape passRef={beach} img={"beach"} />
+      <Landscape passRef={beach} img={"beach"}>
+        <Companies />
+      </Landscape>
       <Landscape passRef={underwater} img={"underwater"} />
       <Landscape passRef={cave} img={"cave"} />
     </Fragment>

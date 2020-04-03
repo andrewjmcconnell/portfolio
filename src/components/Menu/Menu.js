@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
-import { ThemeProvider, ThemeContext } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import face from "tabler-icons/icons/face-id.svg";
 import exit from "tabler-icons/icons/corner-down-left.svg";
@@ -25,19 +25,17 @@ import {
   Bottom
 } from "./Menu.styled";
 
-import {
-  MobileContainer,
-  MobileIcon,
-  MobileBar,
-  DropdownBar,
-  MobileButtonLink,
-  MobileButton,
-  MobileImg
-} from "./Menu.mobile.styled";
+// import {
+//   MobileContainer,
+//   MobileIcon,
+//   MobileBar,
+//   DropdownBar,
+//   MobileButtonLink,
+//   MobileButton,
+//   MobileImg
+// } from "./Menu.mobile.styled";
 
 const Menu = ({ location, theme, toggleTheme }) => {
-  const { isMobile } = useContext(ThemeContext);
-
   const home = location.pathname === "/";
   const [close, setClose] = useState(false);
 
@@ -70,29 +68,29 @@ const Menu = ({ location, theme, toggleTheme }) => {
     </Base>
   );
 
-  const MobileMenu = (
-    <MobileContainer>
-      <MobileIcon onClick={() => setClose(!close)}>
-        <MobileBar />
-      </MobileIcon>
-      <DropdownBar>
-        <MobileButtonLink to={home ? "/about" : "/"}>
-          <MobileImg src={home ? face : exit} alt="" />
-        </MobileButtonLink>
-        <MobileButton
-          onClick={() => {
-            toggleTheme(!theme);
-            localStorage.setItem("theme", theme);
-          }}
-        >
-          <MobileImg src={theme ? sun : moon} alt="" />
-        </MobileButton>
-        <MobileButton onClick={() => {}}>
-          <MobileImg src={mail} alt="" />
-        </MobileButton>
-      </DropdownBar>
-    </MobileContainer>
-  );
+  // const MobileMenu = (
+  //   <MobileContainer>
+  //     <MobileIcon onClick={() => setClose(!close)}>
+  //       <MobileBar />
+  //     </MobileIcon>
+  //     <DropdownBar>
+  //       <MobileButtonLink to={home ? "/about" : "/"}>
+  //         <MobileImg src={home ? face : exit} alt="" />
+  //       </MobileButtonLink>
+  //       <MobileButton
+  //         onClick={() => {
+  //           toggleTheme(!theme);
+  //           localStorage.setItem("theme", theme);
+  //         }}
+  //       >
+  //         <MobileImg src={theme ? sun : moon} alt="" />
+  //       </MobileButton>
+  //       <MobileButton onClick={() => {}}>
+  //         <MobileImg src={mail} alt="" />
+  //       </MobileButton>
+  //     </DropdownBar>
+  //   </MobileContainer>
+  // );
 
   return (
     <ThemeProvider theme={{ close: close }}>

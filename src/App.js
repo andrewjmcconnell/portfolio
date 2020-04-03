@@ -23,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   const stored = localStorage.getItem("theme");
-  console.log(stored);
   const [isDarkMode, setIsDarkMode] = useState(
     stored === "true" ? true : false
   );

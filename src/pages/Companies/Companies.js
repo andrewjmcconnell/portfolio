@@ -4,13 +4,15 @@ import { Box, Center, Stack, Text } from "../../layouts";
 import Accordion from "../../components/Accordion";
 
 import Citybase from "../../img/companies/citybase.png";
+import Optum from "../../img/companies/optum.png";
+import Nielsen from "../../img/companies/nielsen.png";
 
 const content = [
   {
-    img: Citybase
+    img: Nielsen
   },
   {
-    img: Citybase
+    img: Optum
   },
   {
     img: Citybase

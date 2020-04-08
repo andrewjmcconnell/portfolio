@@ -21,8 +21,8 @@ const glow = keyframes`
 
 export const Header = styled.div`
   opacity: 0.0;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 5vmax;
+  line-height: 5vmax;
   font-weight: bold;
   font-family: Graduate;
   text-align: center;

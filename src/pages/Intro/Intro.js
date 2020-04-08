@@ -9,7 +9,7 @@ const Intro = () => {
       <Center intrinsic>
         <Stack childGap="50px">
           <Header>Andrew McConnell</Header>
-          <Text fontSize="30px" textAlign="center" fontFamily="Graduate">
+          <Text fontSize="3vmax" textAlign="center" fontFamily="Graduate">
             Frontend Engineer
           </Text>
         </Stack>

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Intro from "../Intro";
 import Technologies from "../Technologies";
 import Companies from "../Companies";
+import Projects from "../Projects";
 
 import ScrollBar from "../../components/ScrollBar";
 
@@ -39,7 +40,9 @@ const LandingPage = () => {
       <Landscape passRef={beach} img={"beach"}>
         <Companies />
       </Landscape>
-      <Landscape passRef={underwater} img={"underwater"} />
+      <Landscape passRef={underwater} img={"underwater"}>
+        <Projects />
+      </Landscape>
       <Landscape passRef={cave} img={"cave"} />
     </Fragment>
   );

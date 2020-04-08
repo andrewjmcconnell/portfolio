@@ -22,15 +22,6 @@ export const List = styled.ul`
   counter-reset: list;
 `;
 
-const slideUp = keyframes`
-  from {
-    transform: translateY(130%);
-  }
-  to {
-    transform: translateY(0);
-  }
-`;
-
 const slideDown = keyframes`
   from {
     transform: translateY(-100%) translateX(calc(-100% + 10vw));
@@ -46,7 +37,6 @@ export const Item = styled.li`
   margin: 0;
   padding: 10px;
   list-style-type: none;
-
   position: absolute;
   height: 60vh;
   width: 60vw;
@@ -54,11 +44,11 @@ export const Item = styled.li`
   margin-left: calc(${({ index }) => index} * 10vw);
   transform: translateX(calc(-100% + 10vw));
   z-index: calc(${({ total }) => total} - ${({ index }) => index});
-
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 15px;
   box-shadow: 13px 0px 3px 0px rgba(0,0,0,0.75);
   text-align: right;
+  cursor: pointer;
 
   &:hover:not(:focus) {
     transform: ${({ focus }) =>

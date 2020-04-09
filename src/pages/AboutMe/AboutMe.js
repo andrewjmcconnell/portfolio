@@ -29,6 +29,7 @@ const AboutMe = ({ theme }) => (
   >
     <Center intrinsic>
       <Box>
+        <h1>About Me</h1>
         <Stack direction={theme.isMobile ? "column" : "row"} childGap="3rem">
           {cities.map((city, i) => (
             <HiddenCard

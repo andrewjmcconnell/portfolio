@@ -66,7 +66,7 @@ export const IconBackground = styled.div`
   will-change: transform;
 `;
 
-export const Title = styled.div`
+export const Title = styled.h2`
   position: relative;
 `;
 

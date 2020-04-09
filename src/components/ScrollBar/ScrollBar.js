@@ -30,14 +30,14 @@ const ScrollBar = ({ refs }) => {
   return (
     <Fragment>
       <ScrollButton position="top" fade={refIndex === 0} onClick={scroll(-1)}>
-        <ButtonImg src={ArrowUp} alt="" />
+        <ButtonImg src={ArrowUp} alt="Scroll Up" />
       </ScrollButton>
       <ScrollButton
         position="bottom"
         fade={refIndex === refs.length - 1}
         onClick={scroll(1)}
       >
-        <ButtonImg src={ArrowDown} alt="" />
+        <ButtonImg src={ArrowDown} alt="Scroll Down" />
       </ScrollButton>
     </Fragment>
   );

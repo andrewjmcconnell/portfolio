@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Tooltip from "./Tooltip";
 import { Container, Template, Icon } from "./FloatingIcon.styled";
 
-const FloatingIcon = ({ src, tooltipContent }) => {
+const FloatingIcon = ({ content }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   return (
     <Container
@@ -11,9 +11,9 @@ const FloatingIcon = ({ src, tooltipContent }) => {
       onMouseLeave={() => setShowTooltip(false)}
     >
       <Template>
-        <Icon src={src} />
+        <Icon src={content.img} alt={content.alt} />
       </Template>
-      <Tooltip display={showTooltip} content={tooltipContent} />
+      <Tooltip display={showTooltip} content={content.tooltipContent} />
     </Container>
   );
 };

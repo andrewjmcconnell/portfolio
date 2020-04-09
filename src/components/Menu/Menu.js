@@ -41,7 +41,7 @@ const Menu = ({ location, theme, toggleTheme }) => {
 
   const DesktopMenu = (
     <Base>
-      <MenuDiv onClick={() => setClose(!close)}>
+      <MenuDiv onClick={() => setClose(!close)} role="navigation">
         <Icon>
           <Bar />
         </Icon>
@@ -59,11 +59,13 @@ const Menu = ({ location, theme, toggleTheme }) => {
                 toggleTheme(!theme);
                 localStorage.setItem("theme", theme);
               }}
-            />
+            >
+              {!!theme ? "Light Mode" : "Night Mode"}
+            </Content>
           </CoverTwo>
         </CoverOne>
-        <Top to={home ? "/about" : "/"}></Top>
-        <Bottom onClick={() => {}} />
+        <Top to={home ? "/about" : "/"}>About Me</Top>
+        <Bottom onClick={() => {}}>Contact Me</Bottom>
       </Section>
     </Base>
   );

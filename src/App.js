@@ -33,8 +33,8 @@ function App() {
         <Box minWidth="100%" minHeight="100%" padding="0">
           <Menu theme={isDarkMode} toggleTheme={setIsDarkMode} />
           <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/about" component={AboutMe} />
+            <Route exact path="/" component={LandingPage} role="main" />
+            <Route exact path="/about" component={AboutMe} role="main" />
           </Switch>
         </Box>
       </ThemeProvider>

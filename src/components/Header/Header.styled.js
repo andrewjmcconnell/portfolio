@@ -19,7 +19,7 @@ const glow = keyframes`
   }
 `;
 
-export const Header = styled.div`
+export const Header = styled.h1`
   opacity: 0.0;
   font-size: 5vmax;
   line-height: 5vmax;

@@ -18,72 +18,86 @@ import EC2 from "../../img/technologies/ec2.png";
 export const AppDevelopmentContent = [
   {
     img: ReactJs,
-    content:
+    alt: "ReactJs",
+    tooltipContent:
       "I primarily use React.js for web development and React-Native for mobile development, at work and at home."
   },
   {
     img: Redux,
-    content: "I use Redux if state management is necessary and complex enough."
+    alt: "Redux",
+    tooltipContent: "I use Redux if state management is necessary and complex enough."
   },
   {
     img: NodeJs,
-    content:
+    alt: "NodeJs",
+    tooltipContent:
       "For very simple backends and shell scripts that wouldn't work in bash, I use NodeJs (sometimes Python)."
   },
   {
     img: Swift,
-    content:
+    alt: "Swift",
+    tooltipContent:
       "My first mobile experience came in native iOS development using Swift."
   },
   {
     img: Python,
-    content:
+    alt: "Python",
+    tooltipContent:
       "In college I primarily used Python, especially for data analytics and machine learning."
   },
   {
     img: Nginx,
-    content: "I use NGINX as a web server (including for this site)."
+    alt: "NGINX",
+    tooltipContent: "I use NGINX as a web server (including for this site)."
   }
 ];
 
 export const SourceControlContent = [
   {
     img: Git,
-    content: "I use Git CLI for basic source control."
+    alt: "Git",
+    tooltipContent: "I use Git CLI for basic source control."
   },
   {
     img: Github,
-    content: "I use Github for repo management, running CI/CD, "
+    alt: "Github",
+    tooltipContent: "I use Github for repo management, running CI/CD, "
   },
   {
     img: Gitkraken,
-    content: "I use GitKraken as an easy GUI for git branch management."
+    alt: "GitKraken",
+    tooltipContent: "I use GitKraken as an easy GUI for git branch management."
   }
 ];
 
 export const CICDContent = [
   {
     img: Jenkins,
-    content:
+    alt: "Jenkins",
+    tooltipContent:
       "At work we use mostly use Jenkins for CI/CD, including building Quay images for deployment."
   },
   {
     img: CircleCI,
-    content:
+    alt: "CircleCI",
+    tooltipContent:
       "Sometimes I use CircleCI to run some testing CI before building a git commit."
   },
   {
     img: Kubernetes,
-    content:
+    alt: "Kubernetes",
+    tooltipContent:
       "At work we use Kubernetes for containerization and management of applications in different clusters and namespaces."
   },
   {
     img: Argo,
-    content: "We use Argo CD to manage deployment of Quay repos to Kubernetes."
+    alt: "Argo CD",
+    tooltipContent: "We use Argo CD to manage deployment of Quay repos to Kubernetes."
   },
   {
     img: EC2,
-    content:
+    alt: "AWS EC2",
+    tooltipContent:
       "I use AWS EC2 for virtual machine hosting, which is how this website is run."
   }
 ];

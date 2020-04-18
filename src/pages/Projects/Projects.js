@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box, Center, Stack, Text } from "../../layouts";
-import Paginator from "../../components/Paginator";
+import Page from "../../components/Page";
 
 const Projects = () => (
   <Box padding="14vh 10vw" minWidth="100%" minHeight="100%">
@@ -20,11 +20,7 @@ const Projects = () => (
           </Text>
         </Center>
         <Center intrinsic>
-          <Box padding="0 5vw">
-            <Stack direction="row">
-              {/* <Paginator /> */}
-            </Stack>
-          </Box>
+          <Page />
         </Center>
       </Stack>
     </Center>

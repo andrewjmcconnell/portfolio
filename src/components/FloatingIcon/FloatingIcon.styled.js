@@ -86,8 +86,8 @@ export const TooltipArrow = styled.div`
 export const TooltipText = styled.div`
   max-width: 200px;
   padding: 3px 8px;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.onBackground};
   text-align: center;
-  background-color: #000;
+  background-color: ${({ theme }) => theme.colors.background};
   border-radius: 4px;
 `;

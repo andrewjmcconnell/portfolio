@@ -8,7 +8,7 @@ const Paginator = ({ pages, index, setIndex }) => {
     <Dots>
       <Select index={index} />
       {dotRefs.current.map((dot, i) => (
-        <Dot ref={dot} onClick={() => setIndex(i)} />
+        <Dot key={`dot-${i}`} ref={dot} onClick={() => setIndex(i)} />
       ))}
     </Dots>
   );

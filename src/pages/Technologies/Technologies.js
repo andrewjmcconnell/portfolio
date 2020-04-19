@@ -20,7 +20,7 @@ const Row = styled.div`
 const AppDevelopment = (
   <Row>
     {AppDevelopmentContent.map(content => (
-      <FloatingIcon content={content} />
+      <FloatingIcon key={content.alt} content={content} />
     ))}
   </Row>
 );
@@ -28,7 +28,7 @@ const AppDevelopment = (
 const SourceControl = (
   <Row>
     {SourceControlContent.map(content => (
-      <FloatingIcon content={content} />
+      <FloatingIcon key={content.alt} content={content} />
     ))}
   </Row>
 );
@@ -36,7 +36,7 @@ const SourceControl = (
 const CICD = (
   <Row>
     {CICDContent.map(content => (
-      <FloatingIcon content={content} />
+      <FloatingIcon key={content.alt} content={content} />
     ))}
   </Row>
 );

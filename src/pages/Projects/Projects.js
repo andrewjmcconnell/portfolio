@@ -1,7 +1,9 @@
 import React from "react";
 
+import content from "./Projects.content";
+
 import { Box, Center, Stack, Text } from "../../layouts";
-import Page from "../../components/Page";
+import Carousel from "../../components/Carousel";
 
 const Projects = () => (
   <Box padding="14vh 10vw" minWidth="100%" minHeight="100%">
@@ -20,7 +22,7 @@ const Projects = () => (
           </Text>
         </Center>
         <Center intrinsic>
-          <Page />
+          <Carousel content={content} />
         </Center>
       </Stack>
     </Center>

@@ -7,7 +7,7 @@ import {
 } from "./FloatingIcon.styled";
 
 const Tooltip = ({ display, content }) => (
-  <TooltipWrapper display={display}>
+  <TooltipWrapper show={display}>
     <TooltipArrow />
     <TooltipText>{content}</TooltipText>
   </TooltipWrapper>

@@ -65,7 +65,7 @@ export const TooltipWrapper = styled.div`
 
   animation: ${float} 6s ease infinite;
 
-  ${({ display }) => (display ? "opacity: 1;" : "opacity: 0;")}
+  ${({ show }) => (show ? "opacity: 1;" : "opacity: 0;")}
 `;
 
 export const TooltipArrow = styled.div`

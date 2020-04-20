@@ -1,6 +1,6 @@
 import React, { useState, useLayoutEffect, Fragment } from "react";
 
-import { ScrollButton } from "./ScrollBar.styled";
+import { ScrollButton, ButtonLabel } from "./ScrollBar.styled";
 
 import Arrow from "./Arrow";
 
@@ -26,9 +26,11 @@ const ScrollBar = ({ refs }) => {
       setRefIndex(refIndex + offset);
     }
   };
+
   return (
     <Fragment>
       <ScrollButton position="top" fade={refIndex === 0} onClick={scroll(-1)}>
+        <ButtonLabel>Up</ButtonLabel>
         <Arrow upward />
       </ScrollButton>
       <ScrollButton
@@ -36,6 +38,7 @@ const ScrollBar = ({ refs }) => {
         fade={refIndex === refs.length - 1}
         onClick={scroll(1)}
       >
+        <ButtonLabel>Down</ButtonLabel>
         <Arrow />
       </ScrollButton>
     </Fragment>

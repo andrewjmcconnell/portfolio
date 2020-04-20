@@ -45,6 +45,9 @@ const Menu = ({ location, theme, toggleTheme }) => {
     const handleScroll = () => {
       const newScrollPos = window.pageYOffset;
       setVisible(prevScrollPos > newScrollPos);
+      if (prevScrollPos <= newScrollPos) {
+        setClose(false);
+      }
       setPrevScrollPos(newScrollPos);
     }
   

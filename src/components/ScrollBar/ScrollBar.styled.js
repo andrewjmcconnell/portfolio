@@ -22,3 +22,8 @@ export const ScrollButton = styled.button`
     }
   }}
 `;
+
+export const ButtonLabel = styled.div`
+  height: 0;
+  opacity: 0;
+`;

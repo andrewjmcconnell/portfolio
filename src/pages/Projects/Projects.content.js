@@ -55,6 +55,7 @@ const FormattedInputDemo = () => {
         value={value}
         formatter={createFormat(formats, "_")}
         onChange={rawValue => setValue(rawValue)}
+        aria-label="demo"
       />
       <Text>Value: {value}</Text>
 

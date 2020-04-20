@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, Fragment } from "react";
 
 import { ScrollButton, ButtonImg } from "./ScrollBar.styled";
 
+import Arrow from "./Arrow";
 import ArrowUp from "tabler-icons/icons/arrow-up-circle.svg";
 import ArrowDown from "tabler-icons/icons/arrow-down-circle.svg";
 
@@ -30,14 +31,16 @@ const ScrollBar = ({ refs }) => {
   return (
     <Fragment>
       <ScrollButton position="top" fade={refIndex === 0} onClick={scroll(-1)}>
-        <ButtonImg src={ArrowUp} alt="Scroll Up" />
+        {/* <ButtonImg src={ArrowUp} alt="Scroll Up" /> */}
+        <Arrow upward />
       </ScrollButton>
       <ScrollButton
         position="bottom"
         fade={refIndex === refs.length - 1}
         onClick={scroll(1)}
       >
-        <ButtonImg src={ArrowDown} alt="Scroll Down" />
+        {/* <ButtonImg src={ArrowDown} alt="Scroll Down" /> */}
+        <Arrow />
       </ScrollButton>
     </Fragment>
   );

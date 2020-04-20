@@ -26,7 +26,6 @@ const Accordion = ({ content }) => {
   const [focusedIndex, setFocusedIndex] = useState(content.length);
   const contentRefs = useRef([...Array(content.length)].map(() => createRef()));
 
-  
   useEffect(() => {
     const handleClick = ({ target }) => {
       setFocusedIndex(content.length);

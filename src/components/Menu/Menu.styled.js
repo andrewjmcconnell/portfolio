@@ -5,12 +5,12 @@ export const Base = styled.div`
   z-index: 90;
   overflow-x: hidden;
   position: fixed;
-  top: 0px;
+  top: ${({ visible }) => visible ? "0" : "-98px"};
   left: 0px;
   background-color: #ffffff;
   width: 98px;
   height: 98px;
-  transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+  transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1), top 0.6s;
   border-bottom-right-radius: 100%;
 
   ${({ theme }) =>

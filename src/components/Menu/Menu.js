@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
@@ -38,9 +38,24 @@ import {
 const Menu = ({ location, theme, toggleTheme }) => {
   const home = location.pathname === "/";
   const [close, setClose] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newScrollPos = window.pageYOffset;
+      setVisible(prevScrollPos > newScrollPos);
+      setPrevScrollPos(newScrollPos);
+    }
+  
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   const DesktopMenu = (
-    <Base>
+    <Base visible={visible}>
       <MenuDiv onClick={() => setClose(!close)} role="navigation">
         <Icon>
           <Bar />

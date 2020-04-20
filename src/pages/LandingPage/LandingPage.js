@@ -10,6 +10,7 @@ import ScrollBar from "../../components/ScrollBar";
 
 const LandscapeDiv = styled.div`
   background-image: url(${({ img, theme }) => theme.images[img]});
+  transition: background-image 0.2s linear;
   background-size: cover;
   background-position: center center;
   height: 100vh;

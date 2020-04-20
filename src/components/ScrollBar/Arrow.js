@@ -45,6 +45,7 @@ const Chevron = styled.div`
     height: 100%;
     width: 51%;
     background: ${({ theme }) => theme.colors.onBackground};
+    transition: background 1s cubic-bezier(0.5, -0.75, 0.05, 1);
   }
 
   &:before {

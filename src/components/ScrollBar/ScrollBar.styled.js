@@ -1,14 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const bounce = keyframes`
-  0%, 100% {
-    transform: scale(1.0);
-  }
-
-  50% {
-    transform: scale(1.3);
-  }
-`;
+import styled from "styled-components";
 
 export const ScrollButton = styled.button`
   opacity: ${({ fade }) => (fade ? 0 : 1)};
@@ -31,14 +21,4 @@ export const ScrollButton = styled.button`
         break;
     }
   }}
-`;
-
-export const ButtonImg = styled.img`
-  height: 60px;
-  width: 60px;
-
-  &:hover {
-    cursor: pointer;
-    animation: ${bounce} 0.5s ease-out;
-  }
 `;

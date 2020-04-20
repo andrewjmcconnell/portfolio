@@ -1,10 +1,8 @@
 import React, { useState, useLayoutEffect, Fragment } from "react";
 
-import { ScrollButton, ButtonImg } from "./ScrollBar.styled";
+import { ScrollButton } from "./ScrollBar.styled";
 
 import Arrow from "./Arrow";
-import ArrowUp from "tabler-icons/icons/arrow-up-circle.svg";
-import ArrowDown from "tabler-icons/icons/arrow-down-circle.svg";
 
 const ScrollBar = ({ refs }) => {
   const [refIndex, setRefIndex] = useState(0);
@@ -31,7 +29,6 @@ const ScrollBar = ({ refs }) => {
   return (
     <Fragment>
       <ScrollButton position="top" fade={refIndex === 0} onClick={scroll(-1)}>
-        {/* <ButtonImg src={ArrowUp} alt="Scroll Up" /> */}
         <Arrow upward />
       </ScrollButton>
       <ScrollButton
@@ -39,7 +36,6 @@ const ScrollBar = ({ refs }) => {
         fade={refIndex === refs.length - 1}
         onClick={scroll(1)}
       >
-        {/* <ButtonImg src={ArrowDown} alt="Scroll Down" /> */}
         <Arrow />
       </ScrollButton>
     </Fragment>

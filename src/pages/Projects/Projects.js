@@ -6,7 +6,7 @@ import { Box, Center, Stack, Text } from "../../layouts";
 import Carousel from "../../components/Carousel";
 
 const Projects = () => (
-  <Box padding="14vh 10vw" minWidth="100%" minHeight="100%">
+  <Box padding="14vh 0" minWidth="100%" minHeight="100%">
     <Center intrinsic>
       <Stack childGap="3vh">
         <Center intrinsic>

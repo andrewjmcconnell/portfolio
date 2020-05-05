@@ -7,7 +7,7 @@ export const ScrollButton = styled.button`
   outline: none;
   transition: opacity 0.3s ease-in-out;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   ${({ theme }) =>
     theme.isMobile ? "right: 1vw;" : "transform: translateX(-50%); left: 50%;"}
 

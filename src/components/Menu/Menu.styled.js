@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Base = styled.div`
-  z-index: 90;
+  z-index: 1;
   overflow-x: hidden;
   position: fixed;
   top: ${({ visible }) => visible ? "0" : "-98px"};
@@ -23,7 +23,7 @@ export const Base = styled.div`
 `;
 
 export const MenuDiv = styled.div`
-  z-index: 100;
+  z-index: 5;
   background-color: ${({ theme }) => theme.colors.background};
   position: absolute;
   top: 0px;
@@ -115,7 +115,7 @@ export const Bar = styled.div`
 `;
 
 export const Icons = styled.div`
-  z-index: 98;
+  z-index: 4;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -186,7 +186,7 @@ export const ButtonThree = styled.img`
 `;
 
 export const Section = styled.div`
-  z-index: 96;
+  z-index: 3;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -330,7 +330,7 @@ export const Bottom = styled.button`
   cursor: pointer;
   padding: 0;
   border-width: 0px;
-  z-index: 94;
+  z-index: 2;
   width: 100px;
   height: 100px;
   position: absolute;

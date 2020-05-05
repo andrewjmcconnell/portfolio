@@ -51,9 +51,9 @@ export const Icon = styled.img`
 export const TooltipWrapper = styled.div`
   position: absolute;
   z-index: 1;
-  left: -5vmin;
+  transform: translateX(-50%); left: 50%;
   top: 12vmin;
-  width: 24vmin;
+  // width: 24vmin;
   font-weight: 400;
   text-transform: none;
   word-wrap: normal;
@@ -86,6 +86,7 @@ export const TooltipArrow = styled.div`
 export const TooltipText = styled.div`
   max-width: 200px;
   padding: 3px 8px;
+  font-size: 18px;
   color: ${({ theme }) => theme.colors.onBackground};
   text-align: center;
   background-color: ${({ theme }) => theme.colors.background};

@@ -5,19 +5,21 @@ import {
   Wrapper,
   SlideContainer,
   SlideWrapper,
-  Slide,
   PaginationWrapper
 } from "./Carousel.styled.js";
 
+import Slide from "../Slide";
+
 const Carousel = ({ content }) => {
   const [index, setIndex] = useState(0);
+  const spacing = "60vw";
 
   return (
     <Wrapper>
       <SlideContainer>
-        <SlideWrapper index={index} pages={content}>
+        <SlideWrapper index={index} pages={content} spacing={spacing}>
           {content.map(page => (
-            <Slide key={page.id}>{page.renderContent}</Slide>
+            <Slide key={page.id} spacing={spacing}>{/*page.renderContent*/}</Slide>
           ))}
         </SlideWrapper>
       </SlideContainer>

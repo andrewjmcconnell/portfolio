@@ -3,29 +3,24 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 `;
 
 export const SlideContainer = styled.div`
   display: flex;
-  width: 70vw;
+  max-width: 90vw;
   height: 60vh;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  ${({ theme }) => theme.isMobile && `overflow-x: visible;`}
 `;
 
 export const SlideWrapper = styled.div`
   display: flex;
-  width: calc(100% * ${({ pages }) => pages.length});
+  width: calc(90vw * ${({ pages }) => pages.length});
   height: 100%;
-  transform: translateX(calc(-100% * ${({ index }) => index}));
+  transform: translateX(calc((-85vw - ${({ spacing }) => spacing}) * ${({ index }) => index}));
   transition: transform 1s;
-`;
-
-export const Slide = styled.div`
-  flex: none;
-  width: 90%;
-  height: 100%;
-  margin: 0 5%;
-  background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const PaginationWrapper = styled.div`

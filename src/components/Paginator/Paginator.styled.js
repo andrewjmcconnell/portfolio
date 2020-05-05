@@ -3,11 +3,9 @@ import styled from "styled-components";
 export const Dots = styled.ul`
   list-style-type: none;
   background: transparent;
-  // -webkit-filter: blur(5px) contrast(10);
   padding: 0;
   margin: 0;
   position: relative;
-  // filter: blur(2px) contrast(4);
 `;
 
 export const Dot = styled.div`

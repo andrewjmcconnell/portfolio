@@ -1,13 +1,26 @@
 import React from "react";
 
-import { Swiper, Item, Demo, Content, Button } from "./Slide.styled";
+import {
+  Swiper,
+  Item,
+  Demo,
+  Content,
+  Title,
+  Description,
+  ButtonWrapper,
+  Button
+} from "./Slide.styled";
 
-const Slide = ({ spacing }) => (
+const Slide = ({ spacing, title, description, link, content }) => (
   <Swiper spacing={spacing}>
     <Item>
-      <Demo></Demo>
+      <Demo>{content}</Demo>
       <Content>
-        <Button></Button>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <ButtonWrapper>
+          <Button href={link}>Click me!</Button>
+        </ButtonWrapper>
       </Content>
     </Item>
   </Swiper>

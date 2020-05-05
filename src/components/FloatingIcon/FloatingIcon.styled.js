@@ -2,16 +2,13 @@ import styled, { keyframes } from "styled-components";
 
 const float = keyframes`
   0% {
-    // box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
   50% {
-    // box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-    transform: translatey(-20px);
+    transform: translateY(-20px);
   }
   100% {
-    // box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-    transform: translatey(0px);
+    transform: translateY(0px);
   }
 `;
 
@@ -31,7 +28,6 @@ export const Template = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   cursor: pointer;
   justify-content: center;
-  // box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
   animation: ${float} 6s ease infinite;
   // animation-delay: ${({ delay }) => delay && `${delay * 2}s`};
   img {
@@ -51,19 +47,18 @@ export const Icon = styled.img`
 export const TooltipWrapper = styled.div`
   position: absolute;
   z-index: 1;
-  transform: translateX(-50%); left: 50%;
   top: 12vmin;
-  // width: 24vmin;
   font-weight: 400;
   text-transform: none;
   word-wrap: normal;
   font-size: 12px;
-
   display: inline-block;
-
-  margin-top: 3vmin;
-
   animation: ${float} 6s ease infinite;
+
+  overflow: visible;
+  left: 0;
+  right: 0;
+  margin: 3vmin auto 0;
 
   ${({ show }) => (show ? "opacity: 1;" : "opacity: 0;")}
 `;

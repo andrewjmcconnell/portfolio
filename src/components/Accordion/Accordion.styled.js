@@ -79,7 +79,27 @@ export const Logo = styled.img`
 export const Text = styled.div`
   text-align: center;
   padding-right: 12vw;
-  top: 50%;
-  transform: translateY(-50%);
+  font-size: 1.5vmax;
+  margin-bottom: 20px;
+  color: ${({ theme }) => theme.colors.onBackground};
+
+  ${({ italicized }) => italicized && `font-style: italic;`}
+`;
+
+export const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 1vmax;
+`;
+
+export const Resume = styled.ul`
+  list-style: none outside none;
+  margin-left: 0;
+  padding-left: 0;
+`;
+
+export const Bullet = styled.li`
   color: ${({ theme }) => theme.colors.onBackground};
 `;

@@ -1,24 +1,42 @@
 import React, { useState, useRef, createRef, useEffect } from "react";
 
-import { AccordionWrapper, List, Item, Logo, Text } from "./Accordion.styled";
+import {
+  AccordionWrapper,
+  List,
+  Item,
+  Logo,
+  Text,
+  Info,
+  Resume,
+  Bullet
+} from "./Accordion.styled";
 
-const AccordionItem = ({ componentRef, total, index, selected, content }) => (
+const AccordionItem = ({
+  componentRef,
+  total,
+  index,
+  selected,
+  img,
+  position,
+  description
+}) => (
   <Item
     ref={componentRef}
     total={total}
     index={`${index}`}
     focus={index >= selected}
   >
-    <Logo src={content.img} alt="" />
-    <Text>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </Text>
+    <Logo src={img} alt="" />
+    <Info>
+      <Text italicized>{position}</Text>
+      <Resume>
+        {description.map(item => (
+          <Bullet>
+            <Text>{item}</Text>
+          </Bullet>
+        ))}
+      </Resume>
+    </Info>
   </Item>
 );
 
@@ -37,7 +55,7 @@ const Accordion = ({ content }) => {
         }
       }
     };
-  
+
     document.addEventListener("mousedown", handleClick);
     return () => {
       document.removeEventListener("mousedown", handleClick);
@@ -54,7 +72,7 @@ const Accordion = ({ content }) => {
             total={`${content.length}`}
             index={index}
             selected={focusedIndex}
-            content={item}
+            {...item}
           />
         ))}
       </List>

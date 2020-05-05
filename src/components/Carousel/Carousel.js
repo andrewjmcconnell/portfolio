@@ -19,7 +19,7 @@ const Carousel = ({ content }) => {
       <SlideContainer>
         <SlideWrapper index={index} pages={content} spacing={spacing}>
           {content.map(page => (
-            <Slide key={page.id} spacing={spacing}>{/*page.renderContent*/}</Slide>
+            <Slide key={page.id} spacing={spacing} {...page}  />
           ))}
         </SlideWrapper>
       </SlideContainer>

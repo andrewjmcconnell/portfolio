@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 import { FormattedInput, createFormat } from "formatted-input";
 
+import simplexMethod from "../../img/projects/simplex_method.png";
+import rulpDescription from "../../img/projects/rulp_description.png";
+
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,12 +19,17 @@ const Text = styled.div`
   color: ${({ theme }) => theme.colors.onBackground};
 `;
 
-const Link = styled.a``;
+const Img = styled.img`
+  max-width: ${({ width }) => width};
+  max-height: ${({ height }) => height};
+`;
 
 const FormattedInputDemo = () => {
-  const [value, setValue] = useState("");
+  const [moneyValue, setMoneyValue] = useState("");
+  const [dateValue, setDateValue] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
 
-  const formats = [
+  const moneyFormats = [
     "",
     "$0.0_",
     "$0.__",
@@ -36,32 +44,61 @@ const FormattedInputDemo = () => {
     "$___,___,___.__"
   ];
 
+  const dateFormats = [
+    "",
+    "_",
+    "__",
+    "__/_",
+    "__/__",
+    "__/__/_",
+    "__/__/__",
+    "__/__/___",
+    "__/__/____"
+  ];
+
+  const phoneFormats = [
+    "",
+    "+_",
+    "+_ (_)",
+    "+_ (__)",
+    "+_ (___) ",
+    "+_ (___) _",
+    "+_ (___) __",
+    "+_ (___) ___ - ",
+    "+_ (___) ___ - _",
+    "+_ (___) ___ - __",
+    "+_ (___) ___ - ___",
+    "+_ (___) ___ - ____",
+    "+__ (___) ___ - ____",
+    "+___ (___) ___ - ____"
+  ];
+
   return (
     <Content>
-      <Text>Formatted Input</Text>
-      <Text>
-        Formatted Input is an open source React component hosted on NPM which
-        enables the developer to design a set of cosmetic formats for user
-        input. These formats are unrestricted and easy to use, and allow the
-        user to create an input which can format anything from currency to phone
-        numbers to credit card numbers.
-      </Text>
-      <Text>
-        The formatting will only affect what is displayed in the input, while
-        the component maintains the user's input under the hood. See below for
-        example.
-      </Text>
+      <Text>Currency</Text>
       <FormattedInput
-        value={value}
-        formatter={createFormat(formats, "_")}
-        onChange={rawValue => setValue(rawValue)}
-        aria-label="demo"
+        value={moneyValue}
+        formatter={createFormat(moneyFormats, "_")}
+        onChange={rawValue => setMoneyValue(rawValue)}
+        aria-label="moneyDemo"
       />
-      <Text>Value: {value}</Text>
-
-      <Link href="https://examples.amcconnell.now.sh/">Try it yourself!</Link>
-      <Link href="https://github.com/CityBaseInc/formatted-input">Github</Link>
-      <Link href="https://www.npmjs.com/package/formatted-input">NPM</Link>
+      <Text>Value: {moneyValue}</Text>
+      <Text>Dates</Text>
+      <FormattedInput
+        value={dateValue}
+        formatter={createFormat(dateFormats, "_")}
+        onChange={rawValue => setDateValue(rawValue)}
+        aria-label="datesDemo"
+      />
+      <Text>Value: {dateValue}</Text>
+      <Text>Phone Numbers</Text>
+      <FormattedInput
+        value={phoneValue}
+        formatter={createFormat(phoneFormats, "_")}
+        onChange={rawValue => setPhoneValue(rawValue)}
+        aria-label="phoneDemo"
+      />
+      <Text>Value: {phoneValue}</Text>
     </Content>
   );
 };
@@ -69,13 +106,13 @@ const FormattedInputDemo = () => {
 const RulpDemo = () => {
   return (
     <Content>
-      <Text>Rulp (Rust Linear Programming)</Text>
-      <Text>
-        Rulp is an open source Rust library hosted on Cargo intending to
-        simplify the representation and solution of linear programming problems.
-      </Text>
-      <Link href="https://github.com/feelmyears/rulp">Github</Link>
-      <Link href="https://crates.io/crates/rulp">Cargo</Link>
+      <Img src={simplexMethod} alt="simplex_method" height="50%" width="50%" />
+      <Img
+        src={rulpDescription}
+        alt="rulp_description"
+        height="100%"
+        width="100%"
+      />
     </Content>
   );
 };
@@ -83,14 +120,28 @@ const RulpDemo = () => {
 export default [
   {
     id: "formatted-input",
-    renderContent: <FormattedInputDemo />
+    title: "Formatted Input",
+    description: `Formatted Input is an open source project which
+    enables the developer to design a set of cosmetic formats for user
+    input. These formats are unrestricted and easy to use, and allow the
+    user to create an input which can format anything. This will only affect what is displayed in the input, while
+    the component maintains the user's input under the hood.`,
+    content: <FormattedInputDemo />,
+    link: "https://www.npmjs.com/package/formatted-input"
   },
   {
     id: "rulp",
-    renderContent: <RulpDemo />
+    title: "Rulp (Rust Linear Programming)",
+    description: `Rulp is an open source Rust library hosted on Cargo intending to
+    simplify the representation and solution of linear programming problems.`,
+    content: <RulpDemo />,
+    link: "https://crates.io/crates/rulp"
   },
   {
-    id: "whysit",
-    renderContent: <FormattedInputDemo />
+    id: "thirdproject",
+    title: "Third Project",
+    description: `Third project coming soon...`,
+    content: null,
+    link: null
   }
 ];

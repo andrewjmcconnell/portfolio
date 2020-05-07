@@ -5,6 +5,7 @@ import Intro from "../Intro";
 import Technologies from "../Technologies";
 import Companies from "../Companies";
 import Projects from "../Projects";
+import Contact from "../Contact";
 
 import ScrollBar from "../../components/ScrollBar";
 
@@ -42,7 +43,9 @@ const LandingPage = () => {
       <Landscape data-page="4" passRef={underwater} img={"underwater"}>
         <Projects />
       </Landscape>
-      <Landscape data-page="5" passRef={cave} img={"cave"} />
+      <Landscape data-page="5" passRef={cave} img={"cave"}>
+        <Contact />
+      </Landscape>
     </Fragment>
   );
 };

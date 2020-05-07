@@ -49,8 +49,8 @@ const Menu = ({ location, theme, toggleTheme }) => {
         setClose(false);
       }
       setPrevScrollPos(newScrollPos);
-    }
-  
+    };
+
     document.addEventListener("scroll", handleScroll);
     return () => {
       document.removeEventListener("scroll", handleScroll);
@@ -83,7 +83,16 @@ const Menu = ({ location, theme, toggleTheme }) => {
           </CoverTwo>
         </CoverOne>
         <Top to={home ? "/about" : "/"}>About Me</Top>
-        <Bottom onClick={() => {}}>Contact Me</Bottom>
+        <Bottom
+          onClick={() =>
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth"
+            })
+          }
+        >
+          Contact Me
+        </Bottom>
       </Section>
     </Base>
   );

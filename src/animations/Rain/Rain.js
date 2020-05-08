@@ -3,7 +3,7 @@ import React from "react";
 import { RainWrapper, Raindrop } from "./Rain.styled";
 
 const Rain = ({ screenIndex }) => {
-  const raindrops = 50;
+  const raindrops = 0;
 
   const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 

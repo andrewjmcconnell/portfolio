@@ -3,7 +3,7 @@ import React from "react";
 import { FirefliesWrapper, Firefly } from "./Fireflies.styled";
 
 const Fireflies = ({ top }) => {
-  const fireflies = 35;
+  const fireflies = 0;
   const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
   return (
     <FirefliesWrapper top={top}>

@@ -1,10 +1,14 @@
-import React, { Fragment } from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useContext } from "react";
+import styled, { keyframes, ThemeContext } from "styled-components";
 
-import Astronaut from "./Astronaut.svg";
-import Planet from "./Planet.svg";
-import SpaceDark from "./SpaceDark.svg";
-import Meteor from "./Meteor.svg";
+import Astronaut from "./dark/Astronaut.svg";
+import Planet from "./dark/Planet.svg";
+import SpaceDark from "./dark/SpaceDark.svg";
+import Meteor from "./dark/Meteor.svg";
+
+import SpaceLight from "./light/SpaceLight.svg";
+
+import { getRandomInt, Img, Background } from "../../utils/common";
 
 const raining = ({ leftStart, leftEnd, height }) => keyframes`
   0% {
@@ -17,33 +21,24 @@ const raining = ({ leftStart, leftEnd, height }) => keyframes`
   }
 `;
 
+const Wrapper = styled.div`
+  overflow: hidden;
+`;
+
 const MeteorWrapper = styled.div`
   position: absolute;
   animation: ${raining} ${({ duration }) => duration}s linear
     ${({ delay }) => delay}s infinite;
 `;
 
-const Background = styled.img`
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: 0;
-`;
-
-const Img = styled.img`
-  position: absolute;
-  height: ${({ height }) => height}vh;
-  width: ${({ width }) => width}vw;
-  ${({ z }) => z && `z-index: ${z};`}
-  ${({ extraStyles }) => extraStyles}
-`;
-
 const Space = () => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const meteors = 15;
-  const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
-  return (
-    <Fragment>
+
+
+  return isDarkMode ? (
+    <Wrapper>
       <Img
         src={Astronaut}
         height="30"
@@ -77,8 +72,10 @@ const Space = () => {
         );
       })}
       <Background src={SpaceDark} width="100%" height="auto" />
-    </Fragment>
-  );
+    </Wrapper>
+  ) : <Wrapper>
+      <Background src={SpaceLight} width="100%" height="auto" />
+  </Wrapper>;
 };
 
 export default Space;

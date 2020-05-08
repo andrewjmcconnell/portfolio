@@ -2,13 +2,13 @@ import React from "react";
 
 import { RainWrapper, Raindrop } from "./Rain.styled";
 
-const Rain = () => {
+const Rain = ({ screenIndex }) => {
   const raindrops = 50;
 
   const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
 
   return (
-    <RainWrapper>
+    <RainWrapper screenIndex={screenIndex}>
       {[...new Array(raindrops).keys()].map(id => (
         <Raindrop
           key={`raindrop-${id}`}

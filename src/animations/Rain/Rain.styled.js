@@ -12,9 +12,13 @@ const raining = ({left}) => keyframes`
 `;
 
 export const RainWrapper = styled.div`
-  position: relative;
+  position: absolute;
   height: 100%;
+  width: 100%;
+  left: 0;
+  top: ${({ screenIndex }) => screenIndex}00vh;
   overflow: hidden;
+  background-color: transparent;
 `;
 
 export const Raindrop = styled.i`

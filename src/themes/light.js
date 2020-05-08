@@ -6,6 +6,7 @@ import Cave from "../img/cave.svg";
 
 
 export default {
+  isDarkMode: false,
   colors: {
     primary: "#6200EE",
     primaryVariant: "#3700B3",

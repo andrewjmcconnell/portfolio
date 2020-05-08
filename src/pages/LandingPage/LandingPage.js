@@ -32,19 +32,19 @@ const LandingPage = () => {
     <Fragment>
       <ScrollBar refs={[space, sky, beach, underwater, cave]} />
       <Landscape data-page="1" passRef={space} img={"space"}>
-        <Intro />
+        <Intro screen={0} />
       </Landscape>
       <Landscape data-page="2" passRef={sky} img={"sky"}>
-        <Technologies />
+        <Technologies screen={1} />
       </Landscape>
       <Landscape data-page="3" passRef={beach} img={"beach"}>
-        <Companies />
+        <Companies screen={2} />
       </Landscape>
       <Landscape data-page="4" passRef={underwater} img={"underwater"}>
-        <Projects />
+        <Projects screen={3} />
       </Landscape>
       <Landscape data-page="5" passRef={cave} img={"cave"}>
-        <Contact />
+        <Contact screen={4} />
       </Landscape>
     </Fragment>
   );

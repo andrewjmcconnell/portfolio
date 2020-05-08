@@ -5,6 +5,7 @@ import Underwater from "../img/underwater_dark.svg";
 import Cave from "../img/cave_dark.svg";
 
 export default {
+  isDarkMode: true,
   colors: {
     primary: "#BB86FC",
     primaryVariant: "#3700B3",

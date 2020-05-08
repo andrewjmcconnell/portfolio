@@ -15,17 +15,16 @@ import { getRandomInt, Img, Background } from "../../utils/common";
 
 const raining = ({ leftStart, leftEnd, height }) => keyframes`
   0% {
-    left: ${leftStart}vmax;
-    top: calc(0% - ${height}vh)
+    transform: translate(${leftStart}vmax, -${height}vh);
   }
   100% {
-    left: ${leftEnd}vmax;
-    top: 100%;
+    transform: translate(${leftEnd}vmax, 100vh);
   }
 `;
 
 const MeteorWrapper = styled.div`
   position: absolute;
+  will-change: transform;
   animation: ${raining} ${({ duration }) => duration}s linear
     ${({ delay }) => delay}s infinite;
 `;
@@ -53,6 +52,7 @@ const twinkle = keyframes`
 
 const Star = styled.div`
   position: absolute;
+  will-change: transform background animation-timing-function;
   width: 0.5vmin;
   height: 0.5vmin;
   background: rgba(255, 255, 255, 0);
@@ -72,6 +72,7 @@ const Space = () => {
 
   return isDarkMode ? (
     <Fragment>
+      <Background src={SpaceDark} width="100%" height="auto" />
       <Img
         src={Astronaut}
         height="30"
@@ -110,10 +111,10 @@ const Space = () => {
           </MeteorWrapper>
         );
       })}
-      <Background src={SpaceDark} width="100%" height="auto" />
     </Fragment>
   ) : (
     <Fragment>
+      <Background src={SpaceLightBck} width="100%" height="auto" />
       <Img
         src={PlanetOne}
         width="40"
@@ -147,7 +148,6 @@ const Space = () => {
           />
         );
       })}
-      <Background src={SpaceLightBck} width="100%" height="auto" />
     </Fragment>
   );
 };

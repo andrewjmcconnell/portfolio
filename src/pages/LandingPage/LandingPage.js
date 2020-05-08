@@ -16,6 +16,7 @@ import Cave from "../../animations/Cave";
 import ScrollBar from "../../components/ScrollBar";
 
 const LandscapeDiv = styled.div`
+  position: relative;
   background-size: cover;
   height: 100vh;
   width: 100vw;

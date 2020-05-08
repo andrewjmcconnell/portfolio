@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
+export const getRandomInt = (max, min = 0) => Math.floor(Math.random() * (max - min) + min);
 
 export const Background = styled.img`
   position: absolute;

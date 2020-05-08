@@ -25,18 +25,20 @@ const cloudTypes = [
 
 const CloudMove = ({ width }) => keyframes`
   0% {
-    left: -${width}vw;
+    transform: translateX(-${width}vw);
   } 
   100% {
-    left: calc(100vw + ${width}vw);
+    transform: translateX(calc(100vw + ${width}vw));
   }
 `;
 
 const CloudWrapper = styled.div`
-  top: ${({ top }) => top}%;
-  left: ${({ width }) => width}vw;
+  position: absolute;
+  will-change: transform;
+  top: ${({ top }) => top}vh;
+  left: -${({ width }) => width}vw;
   animation: ${CloudMove}
-    ${({ duration, delay }) => `${duration}s linear infinite ${delay}s`};
+    ${({ duration, delay }) => `${duration}s linear ${delay}s infinite`};
 `;
 
 const Sky = () => {
@@ -48,24 +50,25 @@ const Sky = () => {
     </Fragment>
   ) : (
     <Fragment>
+      <Background src={SkyLight} width="100%" height="auto" />
       {[...new Array(clouds).keys()].map(cloud => {
         const cloudType = getRandomInt(7);
-        const top = getRandomInt(100);
-        const duration = getRandomInt(30);
-        const delay = getRandomInt(30);
+        const duration = getRandomInt(15) + 60;
+        const delay = getRandomInt(45);
+        const width = getRandomInt(10) + 5;
+        const top = getRandomInt(100 - width, 0);
         return (
           <CloudWrapper
             key={cloud}
-            width={10}
             top={top}
+            width={width}
             duration={duration}
             delay={delay}
           >
-            <Img src={cloudTypes[cloudType]} width="10" z={1} />
+            <Img src={cloudTypes[cloudType]} width={width} z={1} />
           </CloudWrapper>
         );
       })}
-      <Background src={SkyLight} width="100%" height="auto" />
     </Fragment>
   );
 };

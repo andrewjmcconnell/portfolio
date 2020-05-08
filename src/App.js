@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    // overflow: hidden;
   }
   ::-webkit-scrollbar {
     display: none;

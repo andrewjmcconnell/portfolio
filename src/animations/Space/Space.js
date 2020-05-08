@@ -132,7 +132,6 @@ const Space = () => {
         z={2}
         extraStyles="top: 5vh; left: 40vw;"
       />
-
       {[...new Array(stars).keys()].map(star => {
         const left = getRandomInt(100);
         const top = getRandomInt(100);

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import styled, { keyframes, ThemeContext } from "styled-components";
 
 import Astronaut from "./dark/Astronaut.svg";
@@ -6,23 +6,22 @@ import Planet from "./dark/Planet.svg";
 import SpaceDark from "./dark/SpaceDark.svg";
 import Meteor from "./dark/Meteor.svg";
 
-import SpaceLight from "./light/SpaceLight.svg";
+import SpaceLightBck from "./light/SpaceLightBck.svg";
+import PlanetOne from "./light/PlanetOne.svg";
+import PlanetTwo from "./light/PlanetTwo.svg";
+import PlanetThree from "./light/PlanetThree.svg";
 
 import { getRandomInt, Img, Background } from "../../utils/common";
 
 const raining = ({ leftStart, leftEnd, height }) => keyframes`
   0% {
-    left: ${leftStart}%;
+    left: ${leftStart}vmax;
     top: calc(0% - ${height}vh)
   }
   100% {
-    left: ${leftEnd}%;
-    top: 150%;
+    left: ${leftEnd}vmax;
+    top: 100%;
   }
-`;
-
-const Wrapper = styled.div`
-  overflow: hidden;
 `;
 
 const MeteorWrapper = styled.div`
@@ -31,14 +30,48 @@ const MeteorWrapper = styled.div`
     ${({ delay }) => delay}s infinite;
 `;
 
+const twinkle = keyframes`
+  0% {
+    transform: scale(1, 1);
+    background: rgba(255,255,255,0.0);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: scale(0.8, 0.8);
+    background: rgba(255,255,255,1);
+    animation-timing-function: ease-out;
+  }
+  80% {
+    background: rgba(255,255,255,0.00);
+    transform: scale(1, 1);
+  }
+  100% {
+    background: rgba(255,255,255,0.0);
+    transform: scale(1, 1);
+  }
+`;
+
+const Star = styled.div`
+  position: absolute;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 0.5vmin;
+  z-index: 1;
+  top: ${({ top }) => top}%;
+  left: ${({ left }) => left}%;
+  animation: ${twinkle}
+    ${({ duration, delay }) => `${duration}s linear ${delay}s infinite;`};
+`;
+
 const Space = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
   const meteors = 15;
-
+  const stars = 100;
 
   return isDarkMode ? (
-    <Wrapper>
+    <Fragment>
       <Img
         src={Astronaut}
         height="30"
@@ -56,7 +89,7 @@ const Space = () => {
         const width = getRandomInt(20);
         const height = getRandomInt(20);
         const leftStart = getRandomInt(150 - width);
-        const leftEnd = leftStart - 100;
+        const leftEnd = leftStart - 75;
         return (
           <MeteorWrapper
             key={meteor}
@@ -67,15 +100,57 @@ const Space = () => {
             leftEnd={leftEnd}
             opacity={(getRandomInt(30) + 30) * 0.01}
           >
-            <Img src={Meteor} z={1} width={width} height={height} extraStyles={`top: ${0 - height}vh;`} />
+            <Img
+              src={Meteor}
+              z={1}
+              width={width}
+              height={height}
+              extraStyles={`top: ${0 - height}vh;`}
+            />
           </MeteorWrapper>
         );
       })}
       <Background src={SpaceDark} width="100%" height="auto" />
-    </Wrapper>
-  ) : <Wrapper>
-      <Background src={SpaceLight} width="100%" height="auto" />
-  </Wrapper>;
+    </Fragment>
+  ) : (
+    <Fragment>
+      <Img
+        src={PlanetOne}
+        width="40"
+        z={4}
+        extraStyles="top: 40vh; left: 10vw;"
+      />
+      <Img
+        src={PlanetTwo}
+        width="20"
+        z={3}
+        extraStyles="right: 5vw; bottom: 50vh;"
+      />
+      <Img
+        src={PlanetThree}
+        width="10"
+        z={2}
+        extraStyles="top: 5vh; left: 40vw;"
+      />
+
+      {[...new Array(stars).keys()].map(star => {
+        const left = getRandomInt(100);
+        const top = getRandomInt(100);
+        const duration = getRandomInt(5) + 5;
+        const delay = getRandomInt(5) + 5;
+        return (
+          <Star
+            key={star}
+            left={left}
+            top={top}
+            duration={duration}
+            delay={delay}
+          />
+        );
+      })}
+      <Background src={SpaceLightBck} width="100%" height="auto" />
+    </Fragment>
+  );
 };
 
 export default Space;

@@ -12,8 +12,8 @@ export const Background = styled.img`
 
 export const Img = styled.img`
   position: absolute;
-  height: ${({ height }) => height}vh;
-  width: ${({ width }) => width}vw;
+  height: ${({ height }) => height}vmax;
+  width: ${({ width }) => width}vmax;
   ${({ z }) => z && `z-index: ${z};`}
   ${({ extraStyles }) => extraStyles}
 `;

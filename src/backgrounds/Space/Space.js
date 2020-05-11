@@ -11,6 +11,8 @@ import PlanetOne from "./light/PlanetOne.svg";
 import PlanetTwo from "./light/PlanetTwo.svg";
 import PlanetThree from "./light/PlanetThree.svg";
 
+import Stars from "../../animations/Stars";
+
 import { getRandomInt, Img, Background } from "../../utils/common";
 
 const raining = ({ leftStart, leftEnd, height }) => keyframes`
@@ -48,20 +50,6 @@ const twinkle = keyframes`
     background: rgba(255,255,255,0.0);
     transform: scale(1, 1);
   }
-`;
-
-const Star = styled.div`
-  position: absolute;
-  will-change: transform background animation-timing-function;
-  width: 0.5vmin;
-  height: 0.5vmin;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 0.5vmin;
-  z-index: 1;
-  top: ${({ top }) => top}%;
-  left: ${({ left }) => left}%;
-  animation: ${twinkle}
-    ${({ duration, delay }) => `${duration}s linear ${delay}s infinite;`};
 `;
 
 const Space = () => {
@@ -133,21 +121,7 @@ const Space = () => {
         z={2}
         extraStyles="top: 5vh; left: 40vw;"
       />
-      {[...new Array(stars).keys()].map(star => {
-        const left = getRandomInt(100);
-        const top = getRandomInt(100);
-        const duration = getRandomInt(5) + 5;
-        const delay = getRandomInt(5) + 5;
-        return (
-          <Star
-            key={star}
-            left={left}
-            top={top}
-            duration={duration}
-            delay={delay}
-          />
-        );
-      })}
+      <Stars count={stars} />
     </Fragment>
   );
 };

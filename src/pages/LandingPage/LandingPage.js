@@ -7,11 +7,11 @@ import Companies from "../Companies";
 import Projects from "../Projects";
 import Contact from "../Contact";
 
-import Space from "../../animations/Space";
-import Sky from "../../animations/Sky";
-import Beach from "../../animations/Beach";
-import Underwater from "../../animations/Underwater";
-import Cave from "../../animations/Cave";
+import Space from "../../backgrounds/Space";
+import Sky from "../../backgrounds/Sky";
+import Beach from "../../backgrounds/Beach";
+import Underwater from "../../backgrounds/Underwater";
+import Cave from "../../backgrounds/Cave";
 
 import ScrollBar from "../../components/ScrollBar";
 

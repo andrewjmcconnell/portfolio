@@ -1,21 +1,31 @@
 import React from "react";
+import styled from "styled-components";
 
-import { Box, Center, Stack, Text } from "../../layouts";
 import Header from "../../components/Header";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+const Subtitle = styled.div`
+z-index: 5;
+padding-bottom: 10%;
+font-family: Graduate;
+font-size: 3vmax;
+color: ${({ theme }) => theme.colors.onBackground};
+`;
 
 
 const Intro = () => {
   return (
-    <Box padding="35vh 5vh" minWidth="100%" minHeight="100%">
-      <Center intrinsic>
-        <Stack childGap="50px">
-          <Header>Andrew McConnell</Header>
-          <Text fontSize="3vmax" textAlign="center" fontFamily="Graduate">
-            Frontend Engineer
-          </Text>
-        </Stack>
-      </Center>
-    </Box>
+    <Wrapper>
+      <Header>Andrew McConnell</Header>
+      <Subtitle>Frontend Engineer</Subtitle>
+    </Wrapper>
   );
 };
 

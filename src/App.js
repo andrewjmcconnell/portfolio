@@ -6,7 +6,6 @@ import Menu from "./components/Menu";
 import LandingPage from "./pages/LandingPage";
 import AboutMe from "./pages/AboutMe";
 import withWindowSize from "./utils/withWindowResize";
-import { Box } from "./layouts";
 
 import light from "./themes/light";
 import dark from "./themes/dark";
@@ -15,7 +14,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    // overflow: hidden;
+    overflow: hidden;
+    // backface-visibility: hidden;
+    // perspective: 1000;
   }
   ::-webkit-scrollbar {
     display: none;
@@ -31,13 +32,11 @@ function App() {
     <Router>
       <GlobalStyle />
       <ThemeProvider theme={isDarkMode ? dark : light}>
-        <Box minWidth="100%" minHeight="100%" padding="0">
           <Menu theme={isDarkMode} toggleTheme={setIsDarkMode} />
           <Switch>
             <Route exact path="/" component={LandingPage} role="main" />
             <Route exact path="/about" component={AboutMe} role="main" />
           </Switch>
-        </Box>
       </ThemeProvider>
     </Router>
   );

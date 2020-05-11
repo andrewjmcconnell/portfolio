@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import { getRandomInt, Img, Background } from "../../utils/common";
 
@@ -8,9 +8,13 @@ import UnderwaterDark from "./dark/underwater_dark.svg";
 const Underwater = () => {
   const { isDarkMode } = useContext(ThemeContext);
   return isDarkMode ? (
-    <Background src={UnderwaterDark} width="100%" height="auto" />
+    <Fragment>
+      <Background src={UnderwaterDark} width="100%" height="auto" />
+    </Fragment>
   ) : (
-    <Background src={UnderwaterLight} width="100%" height="auto" />
+    <Fragment>
+      <Background src={UnderwaterLight} width="100%" height="auto" />
+    </Fragment>
   );
 };
 

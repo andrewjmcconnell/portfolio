@@ -34,4 +34,6 @@ export const Header = styled.h1`
   background-color: transparent;
   animation: ${reveal} 3s ease-in-out forwards 2s,
     ${glow} 2.5s linear infinite 2.2s;
+  z-index: 5;
+  margin: 0;
 `;

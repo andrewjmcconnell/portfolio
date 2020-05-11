@@ -11,7 +11,9 @@ import CloudFive from "./light/CloudFive.svg";
 import CloudSix from "./light/CloudSix.svg";
 import CloudSeven from "./light/CloudSeven.svg";
 
-import SkyDark from "./dark/sky_night.jpg";
+import SkyDark from "./dark/SkyNight.svg";
+
+import Stars from "../../animations/Stars";
 
 const cloudTypes = [
   CloudOne,
@@ -46,6 +48,7 @@ const Sky = () => {
   const clouds = 5;
   return isDarkMode ? (
     <Fragment>
+      <Stars count={100} />
       <Background src={SkyDark} width="100%" height="auto" />
     </Fragment>
   ) : (
@@ -54,7 +57,7 @@ const Sky = () => {
       {[...new Array(clouds).keys()].map(cloud => {
         const cloudType = getRandomInt(7);
         const duration = getRandomInt(15) + 60;
-        const delay = getRandomInt(45);
+        const delay = getRandomInt(75);
         const width = getRandomInt(10) + 5;
         const top = getRandomInt(100 - width, 0);
         return (

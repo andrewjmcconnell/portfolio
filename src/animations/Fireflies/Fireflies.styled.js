@@ -43,8 +43,7 @@ export const FirefliesWrapper = styled.div`
 
 export const Firefly = styled.i`
   position: absolute;
-  // left: 50%;
-  // top: 50%;
+  z-index: ${({ z }) => z};
   width: 0.4vw;
   height: 0.4vw;
   margin: -0.2vw 0 0 9.8vw;

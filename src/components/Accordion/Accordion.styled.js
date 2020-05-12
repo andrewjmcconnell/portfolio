@@ -43,7 +43,7 @@ export const Item = styled.li`
   transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
   margin-left: calc(${({ index }) => index} * 10vw);
   transform: translateX(calc(-100% + 10vw));
-  z-index: calc(${({ total }) => total} - ${({ index }) => index});
+  z-index: calc(${({ total }) => total} - ${({ index }) => index} + 5);
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 15px;
   box-shadow: 13px 0px 3px 0px rgba(0,0,0,0.75);

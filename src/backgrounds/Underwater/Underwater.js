@@ -13,7 +13,11 @@ const Underwater = () => {
     </Fragment>
   ) : (
     <Fragment>
-      <Background src={UnderwaterLight} width="100%" height="auto" />
+      <Background
+        src={UnderwaterLight}
+        width="100%"
+        height="auto"
+      />
     </Fragment>
   );
 };

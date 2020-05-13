@@ -2,14 +2,17 @@ import React, { Fragment, useContext } from "react";
 import styled, { ThemeContext, keyframes } from "styled-components";
 import { getRandomInt, Img, Background } from "../../utils/common";
 
-import BeachLight from "./light/beach.svg";
+import BeachForeground from "./light/BeachForeground.svg";
+import SkyLightBackground from "./light/SkyLightBackground.svg";
 
 import SkyNight from "./dark/SkyNight.svg";
 import WaterNight from "./dark/WaterNight.svg";
 import WavesNight from "./dark/WavesNight.svg";
 import BeachNightForeground from "./dark/BeachNightForeground.svg";
 
+import Clouds from "../../animations/Clouds";
 import Fireflies from "../../animations/Fireflies";
+import Waves from "../../animations/Waves";
 
 const slide = keyframes`
   0% {
@@ -31,6 +34,7 @@ const WaterWrapper = styled.div`
 
 const Beach = () => {
   const { isDarkMode } = useContext(ThemeContext);
+  const clouds = 5;
   return isDarkMode ? (
     <Fragment>
       <Img
@@ -67,7 +71,16 @@ const Beach = () => {
     </Fragment>
   ) : (
     <Fragment>
-      <Background src={BeachLight} width="100%" height="auto" />
+      <Background src={SkyLightBackground} width="100%" height="auto" />
+      <Clouds clouds={clouds} bottom={50} />
+      <Waves top={60} bottom={-30} />
+      <Img
+        src={BeachForeground}
+        width="100"
+        height="100"
+        z={2}
+        extraStyles="top: 0; left: 0; right: 0; bottom: 0; object-fit: cover;"
+      />
     </Fragment>
   );
 };

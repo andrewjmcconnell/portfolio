@@ -22,7 +22,7 @@ const move = keyframes`
 const ArrowWrapper = styled.div`
   height: 6vh;
   width: 6vh;
-  cursor: pointer;
+  // cursor: pointer;
 
   display: flex;
   ${({ upward }) => upward && "transform: rotate(180deg);"}

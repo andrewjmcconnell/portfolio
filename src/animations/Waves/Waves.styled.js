@@ -25,7 +25,7 @@ export const Wave = styled.div`
   width: 100%;
   height: 85%;
   background-color: #84cfc4;
-  animation: ${move} 6s infinite;
+  animation: ${move} 6s ease-in-out infinite;
 
   &:before {
     content: "";

@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 
 export const Base = styled.div`
   z-index: 10;
+  will-change: width, height, top;
   overflow: hidden;
   position: fixed;
-  top: ${({ visible }) => visible ? "0" : "-98px"};
+  top: 0; //${({ visible }) => visible ? "0" : "-98px"};
   left: 0px;
   background-color: #ffffff;
   width: 9.8vh;
@@ -24,6 +25,7 @@ export const Base = styled.div`
 
 export const MenuDiv = styled.div`
   z-index: 50;
+  will-change: width, height;
   background-color: ${({ theme }) => theme.colors.background};
   position: absolute;
   top: 0;
@@ -41,7 +43,6 @@ export const MenuDiv = styled.div`
     width: 15vh;
     height: 15vh;
     transition: all 1s cubic-bezier(0.50, 0, 0.05, 1.75), background-color 1s ease;
-    background-color: ${({ theme }) => theme.colors.background};
   `}
 `;
 
@@ -56,6 +57,7 @@ export const Icon = styled.div`
   &:before,
   &:after {
     content: "";
+    will-change: top, background-color;
     transform: rotate(0deg);
     transition: top 0.5s ease 0.5s, transform 0.5s ease,
       background-color 0.75s ease 0.25s;
@@ -95,6 +97,7 @@ export const Icon = styled.div`
 `;
 
 export const Bar = styled.div`
+  will-change: opacity, background-color;
   transition: opacity 0s linear 0.5s, background-color 0.75s ease 0.25s;
   opacity: 1;
   top: 1vh;
@@ -199,6 +202,7 @@ export const Section = styled.div`
 export const CoverOne = styled.div`
   transform-origin: 100% 100%;
   & {
+    will-change: transform;
     position: absolute;
     width: 60vh;
     height: 60vh;
@@ -216,6 +220,7 @@ export const CoverOne = styled.div`
   transform-origin: 100% 100%;
 
   & {
+    will-change: transform;
     position: absolute;
     width: 60vh;
     height: 60vh;
@@ -231,6 +236,7 @@ export const CoverOne = styled.div`
 
 export const CoverTwo = styled.div`
   position: absolute;
+  will-change: transform;
   width: 60vh;
   height: 60vh;
 
@@ -263,6 +269,7 @@ export const CoverTwo = styled.div`
 `;
 
 export const Content = styled.button`
+  will-change: background-color, width, height;
   border-width: 0;
   cursor: pointer;
   position: absolute;
@@ -299,6 +306,7 @@ export const Content = styled.button`
 
 export const Top = styled(NavLink)`
   background-color: ${({ theme }) => theme.colors.background};
+  will-change: width, height;
   width: 10vh;
   height: 10vh;
   position: absolute;
@@ -325,6 +333,7 @@ export const Top = styled(NavLink)`
 
 export const Bottom = styled.button`
   background-color: ${({ theme }) => theme.colors.background};
+  will-change: width, height;
   cursor: pointer;
   padding: 0;
   border-width: 0px;

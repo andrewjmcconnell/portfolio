@@ -14,7 +14,8 @@ const move = keyframes`
 
 export const WavesWrapper = styled.div`
   position: absolute;
-  width: 110%;
+  width: 120%;
+  left: -10%;
   height: 15%;
   top: ${({ top }) => top}%;
   bottom: ${({ bottom }) => bottom}%;
@@ -24,7 +25,7 @@ export const Wave = styled.div`
   position: absolute;
   width: 100%;
   height: 85%;
-  background-color: #84cfc4;
+  background-color: #58C8DC;
   animation: ${move} 6s ease-in-out infinite;
 
   &:before {

@@ -23,7 +23,7 @@ const twinkle = keyframes`
 
 export const Star = styled.div`
   position: absolute;
-  will-change: transform background;
+  will-change: transform, background;
   width: 0.5vmin;
   height: 0.5vmin;
   background: rgba(255, 255, 255, 0);

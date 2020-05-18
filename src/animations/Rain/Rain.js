@@ -1,18 +1,16 @@
 import React from "react";
 
 import { RainWrapper, Raindrop } from "./Rain.styled";
+import { getRandomInt } from "../../utils/common";
 
-const Rain = ({ screenIndex }) => {
-  const raindrops = 0;
-
-  const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
-
+const Rain = () => {
+  const raindrops = 5;
   return (
-    <RainWrapper screenIndex={screenIndex}>
+    <RainWrapper>
       {[...new Array(raindrops).keys()].map(id => (
         <Raindrop
           key={`raindrop-${id}`}
-          duration={getRandomInt(10) + 6}
+          duration={getRandomInt(2) + 2}
           delay={getRandomInt(30)}
           left={getRandomInt(100)}
           opacity={(getRandomInt(30) + 30) * 0.01}

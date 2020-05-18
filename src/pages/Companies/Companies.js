@@ -1,36 +1,17 @@
 import React from "react";
 
-import { Box, Center, Stack, Text } from "../../layouts";
 import Accordion from "../../components/Accordion";
+import Fireflies from "../../animations/Fireflies";
 
 import content from "./Companies.content";
-
-const Companies = () => (
-  <Box padding="14vh 10vw" minWidth="100%" minHeight="100%">
-    <Center intrinsic>
-      <Stack childGap="3vh">
-        <Center intrinsic>
-          <Text
-            fontSize="5vmax"
-            lineHeight="5vmax"
-            fontWeight="bold"
-            fontFamily="Graduate"
-            textAlign="center"
-            extraStyles="background-clip: text;"
-          >
-            Places I've Worked
-          </Text>
-        </Center>
-        <Center intrinsic>
-          <Box padding="0 5vw">
-            <Stack>
-              <Accordion content={content} />
-            </Stack>
-          </Box>
-        </Center>
-      </Stack>
-    </Center>
-  </Box>
+import { Wrapper, Title, Content } from "../Pages.styled";
+const Companies = ({ screen }) => (
+  <Wrapper>
+    <Title>Places I've Worked</Title>
+    <Content flex={8}>
+      <Accordion content={content} />
+    </Content>
+  </Wrapper>
 );
 
 export default Companies;

@@ -15,10 +15,12 @@ const float = keyframes`
 export const Container = styled.div`
   position: relative;
   margin: 10px;
+  z-index: 10;
 `;
 
 export const Template = styled.div`
   position: relative;
+  will-change: transform;
   display: flex;
   width: 12vmin;
   height: 12vmin;
@@ -29,7 +31,6 @@ export const Template = styled.div`
   cursor: pointer;
   justify-content: center;
   animation: ${float} 6s ease infinite;
-  // animation-delay: ${({ delay }) => delay && `${delay * 2}s`};
   img {
     width: 100%;
     height: 100%;
@@ -46,7 +47,7 @@ export const Icon = styled.img`
 
 export const TooltipWrapper = styled.div`
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   top: 12vmin;
   font-weight: 400;
   text-transform: none;

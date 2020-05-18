@@ -13,7 +13,7 @@ export const SlideContainer = styled.div`
   margin: 0 auto;
   overflow: hidden;
 
-  // ${({ theme }) => theme.isMobile && `overflow-x: visible;`}
+  // ${({ theme }) => theme.isMobile && `overflow-x: scroll;`}
 `;
 
 export const SlideWrapper = styled.div`

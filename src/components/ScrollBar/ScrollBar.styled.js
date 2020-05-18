@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ScrollButton = styled.button`
   opacity: ${({ fade }) => (fade ? 0 : 1)};
+  cursor: ${({ fade }) => fade ? "default" : "pointer"};
   border: none;
   background-color: transparent;
   outline: none;

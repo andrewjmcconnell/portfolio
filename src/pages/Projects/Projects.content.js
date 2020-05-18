@@ -11,8 +11,11 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 1.5rem;
+`;
+
+const Buffer = styled.div`
+  padding: 0.5rem 0;
 `;
 
 const Text = styled.div`
@@ -25,9 +28,9 @@ const Img = styled.img`
 `;
 
 const FormattedInputDemo = () => {
-  const [moneyValue, setMoneyValue] = useState("");
-  const [dateValue, setDateValue] = useState("");
-  const [phoneValue, setPhoneValue] = useState("");
+  const [moneyValue, setMoneyValue] = useState("1");
+  const [dateValue, setDateValue] = useState("12345678");
+  const [phoneValue, setPhoneValue] = useState("12345678900");
 
   const moneyFormats = [
     "",
@@ -75,30 +78,37 @@ const FormattedInputDemo = () => {
 
   return (
     <Content>
-      <Text>Currency</Text>
-      <FormattedInput
-        value={moneyValue}
-        formatter={createFormat(moneyFormats, "_")}
-        onChange={rawValue => setMoneyValue(rawValue)}
-        aria-label="moneyDemo"
-      />
-      <Text>Value: {moneyValue}</Text>
-      <Text>Dates</Text>
-      <FormattedInput
-        value={dateValue}
-        formatter={createFormat(dateFormats, "_")}
-        onChange={rawValue => setDateValue(rawValue)}
-        aria-label="datesDemo"
-      />
-      <Text>Value: {dateValue}</Text>
-      <Text>Phone Numbers</Text>
-      <FormattedInput
-        value={phoneValue}
-        formatter={createFormat(phoneFormats, "_")}
-        onChange={rawValue => setPhoneValue(rawValue)}
-        aria-label="phoneDemo"
-      />
-      <Text>Value: {phoneValue}</Text>
+      <Text>Try me!</Text>
+      <Buffer>
+        <Text>Currency</Text>
+        <FormattedInput
+          value={moneyValue}
+          formatter={createFormat(moneyFormats, "_")}
+          onChange={rawValue => setMoneyValue(rawValue)}
+          aria-label="moneyDemo"
+        />
+        <Text>Value: {moneyValue}</Text>
+      </Buffer>
+      <Buffer>
+        <Text>Dates</Text>
+        <FormattedInput
+          value={dateValue}
+          formatter={createFormat(dateFormats, "_")}
+          onChange={rawValue => setDateValue(rawValue)}
+          aria-label="datesDemo"
+        />
+        <Text>Value: {dateValue}</Text>
+      </Buffer>
+      <Buffer>
+        <Text>Phone Numbers</Text>
+        <FormattedInput
+          value={phoneValue}
+          formatter={createFormat(phoneFormats, "_")}
+          onChange={rawValue => setPhoneValue(rawValue)}
+          aria-label="phoneDemo"
+        />
+        <Text>Value: {phoneValue}</Text>
+      </Buffer>
     </Content>
   );
 };

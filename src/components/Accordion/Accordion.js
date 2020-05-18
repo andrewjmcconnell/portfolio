@@ -31,7 +31,7 @@ const AccordionItem = ({
       <Text italicized>{position}</Text>
       <Resume>
         {description.map(item => (
-          <Bullet>
+          <Bullet key={item}>
             <Text>{item}</Text>
           </Bullet>
         ))}

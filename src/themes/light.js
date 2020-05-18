@@ -1,11 +1,12 @@
-import Space from "../img/space.svg";
-import Sky from "../img/sky.jpg";
-import Beach from "../img/beach.svg";
-import Underwater from "../img/underwater.svg";
-import Cave from "../img/cave.svg";
+// import Space from "../img/space.svg";
+// import Sky from "../img/sky.jpg";
+// import Beach from "../img/beach.svg";
+// import Underwater from "../img/underwater.svg";
+// import Cave from "../img/cave.svg";
 
 
 export default {
+  isDarkMode: false,
   colors: {
     primary: "#6200EE",
     primaryVariant: "#3700B3",
@@ -20,10 +21,10 @@ export default {
     onError: "#FFFFFF"
   },
   images: {
-    space: Space,
-    sky: Sky,
-    beach: Beach,
-    underwater: Underwater,
-    cave: Cave
+    // space: Space,
+    // sky: Sky,
+    // beach: Beach,
+    // underwater: Underwater,
+    // cave: Cave
   }
 };

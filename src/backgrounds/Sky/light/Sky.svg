@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="master-artboard" viewBox="0 0 1011.1142578125 656.2384643554688" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1011.1142578125px" height="656.2384643554688px" enable-background="new 0 0 1400 980" xmlns:xlink="http://www.w3.org/1999/xlink"><rect id="ee-background" x="0" y="0" width="1011.1142578125" height="656.2384643554688" style="fill: white; fill-opacity: 0; pointer-events: none;"/>
+<linearGradient id="XMLID_7_" gradientUnits="userSpaceOnUse" x1="700" y1="-27.0212" x2="700" y2="824.3395">
+		<stop offset="0" style="stop-color:#F47920"/>
+		<stop offset="0.7581" style="stop-color:#F199C1"/>
+	</linearGradient><path d="M 0 0 H 1400 V 980 H 0 V 0 Z" id="XMLID_127_" fill="url(#XMLID_7_)" transform="matrix(1, 0, 0, 1, -374.0002453090884, -277.2439880371094)"/><defs>
+			<path d="M 0 0 H 1400 V 980 H 0 V 0 Z" id="XMLID_6_"/>
+		</defs><clipPath id="XMLID_8_">
+			<use overflow="visible" xlink:href="#XMLID_6_"/>
+		</clipPath><linearGradient id="XMLID_10_" gradientUnits="userSpaceOnUse" x1="265.7953" y1="274.2366" x2="265.7953" y2="374.4164">
+				<stop offset="6.451613e-002" style="stop-color:#FCC49D"/>
+				<stop offset="0.9946" style="stop-color:#FAA552;stop-opacity:0"/>
+			</linearGradient><linearGradient id="XMLID_11_" gradientUnits="userSpaceOnUse" x1="700" y1="755.0826" x2="700" y2="949.997">
+				<stop offset="0" style="stop-color:#046CAC"/>
+				<stop offset="0.5538" style="stop-color:#4A9ED7"/>
+				<stop offset="1" style="stop-color:#53C9EC"/>
+			</linearGradient><linearGradient id="XMLID_12_" gradientUnits="userSpaceOnUse" x1="1073.3564" y1="146.8615" x2="1073.3564" y2="557.9026">
+				<stop offset="0" style="stop-color:#FDC010"/>
+				<stop offset="1" style="stop-color:#F594A9"/>
+			</linearGradient><path d="M 1278.900024 415.700012 A 205.5 205.5 0 0 1 1073.400024 621.200012 A 205.5 205.5 0 0 1 867.900024 415.700012 A 205.5 205.5 0 0 1 1073.400024 210.200012 A 205.5 205.5 0 0 1 1278.900024 415.700012 Z" id="XMLID_414_" fill="url(#XMLID_12_)" transform="matrix(1, 0, 0, 1, -316.3186149597168, -104.19910430908203)"/><linearGradient id="XMLID_13_" gradientUnits="userSpaceOnUse" x1="681.6047" y1="514.277" x2="681.6047" y2="614.4568" gradientTransform="matrix(-1 0 0 1 1862.6783 0)">
+				<stop offset="6.451613e-002" style="stop-color:#FCC49D"/>
+				<stop offset="0.9946" style="stop-color:#FAA552;stop-opacity:0"/>
+			</linearGradient><linearGradient id="XMLID_14_" gradientUnits="userSpaceOnUse" x1="470.1926" y1="86.277" x2="470.1926" y2="186.4568" gradientTransform="matrix(-1 0 0 1 1862.6783 0)">
+				<stop offset="6.451613e-002" style="stop-color:#FCC49D"/>
+				<stop offset="0.9946" style="stop-color:#FAA552;stop-opacity:0"/>
+			</linearGradient>
+</svg>

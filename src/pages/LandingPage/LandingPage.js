@@ -5,11 +5,18 @@ import Intro from "../Intro";
 import Technologies from "../Technologies";
 import Companies from "../Companies";
 import Projects from "../Projects";
+import Contact from "../Contact";
+
+import Space from "../../backgrounds/Space";
+import Sky from "../../backgrounds/Sky";
+import Beach from "../../backgrounds/Beach";
+import Underwater from "../../backgrounds/Underwater";
+import Cave from "../../backgrounds/Cave";
 
 import ScrollBar from "../../components/ScrollBar";
 
 const LandscapeDiv = styled.div`
-  background-image: url(${({ img, theme }) => theme.images[img]});
+  position: relative;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -30,19 +37,26 @@ const LandingPage = () => {
   return (
     <Fragment>
       <ScrollBar refs={[space, sky, beach, underwater, cave]} />
-      <Landscape data-page="1" passRef={space} img={"space"}>
-        <Intro />
+      <Landscape data-page="1" passRef={space}>
+        <Space />
+        <Intro screen={0} />
       </Landscape>
-      <Landscape data-page="2" passRef={sky} img={"sky"}>
-        <Technologies />
+      <Landscape data-page="2" passRef={sky}>
+        <Sky />
+        <Technologies screen={1} />
       </Landscape>
-      <Landscape data-page="3" passRef={beach} img={"beach"}>
-        <Companies />
+      <Landscape data-page="3" passRef={beach}>
+        <Beach />
+        <Companies screen={2} />
       </Landscape>
-      <Landscape data-page="4" passRef={underwater} img={"underwater"}>
-        <Projects />
+      <Landscape data-page="4" passRef={underwater}>
+        <Underwater />
+        <Projects screen={3} />
       </Landscape>
-      <Landscape data-page="5" passRef={cave} img={"cave"} />
+      <Landscape data-page="5" passRef={cave}>
+        <Cave />
+        <Contact screen={4} />
+      </Landscape>
     </Fragment>
   );
 };

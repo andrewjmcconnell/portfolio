@@ -7,22 +7,22 @@ const move = keyframes`
   }
   33% {
     opacity: 1;
-    transform: translateY(30px);
+    transform: translateY(2.5vh);
   }
   67% {
     opacity: 1;
-    transform: translateY(40px);
+    transform: translateY(4vh);
   }
   100% {
     opacity: 0;
-    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    transform: translateY(5.5vh) scale3d(0.5, 0.5, 0.5);
   }
 `;
 
 const ArrowWrapper = styled.div`
-  height: 60px;
-  width: 60px;
-  cursor: pointer;
+  height: 6vh;
+  width: 6vh;
+  // cursor: pointer;
 
   display: flex;
   ${({ upward }) => upward && "transform: rotate(180deg);"}
@@ -30,8 +30,8 @@ const ArrowWrapper = styled.div`
 
 const Chevron = styled.div`
   position: absolute;
-  width: 60px;
-  height: 8px;
+  width: 5vh;
+  height: 1vh;
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: ${move} 3s ease-out infinite;

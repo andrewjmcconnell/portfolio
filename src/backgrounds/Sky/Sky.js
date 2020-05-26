@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from "react";
-import styled, { keyframes, ThemeContext } from "styled-components";
-import { getRandomInt, Img, Background } from "../../utils/common";
+import { ThemeContext } from "styled-components";
+import { Background } from "../../utils/common";
 
 import SkyLight from "./light/Sky.svg";
 

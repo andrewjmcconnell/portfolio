@@ -31,27 +31,6 @@ const MeteorWrapper = styled.div`
     ${({ delay }) => delay}s infinite;
 `;
 
-const twinkle = keyframes`
-  0% {
-    transform: scale(1, 1);
-    background: rgba(255,255,255,0.0);
-    animation-timing-function: ease-in;
-  }
-  60% {
-    transform: scale(0.8, 0.8);
-    background: rgba(255,255,255,1);
-    animation-timing-function: ease-out;
-  }
-  80% {
-    background: rgba(255,255,255,0.00);
-    transform: scale(1, 1);
-  }
-  100% {
-    background: rgba(255,255,255,0.0);
-    transform: scale(1, 1);
-  }
-`;
-
 const Space = () => {
   const { isDarkMode } = useContext(ThemeContext);
 

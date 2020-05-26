@@ -1,7 +1,6 @@
 import React from "react";
 
 import Accordion from "../../components/Accordion";
-import Fireflies from "../../animations/Fireflies";
 
 import content from "./Companies.content";
 import { Wrapper, Title, Content } from "../Pages.styled";

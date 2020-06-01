@@ -54,7 +54,7 @@ const Fish = () => {
         const width = getRandomInt(10) + 5;
         const top = getRandomInt(100 - width, 0);
         return (
-          <OuterFishWrapper delay={delayOuter}>
+          <OuterFishWrapper key={fish} delay={delayOuter}>
             <FishWrapper
               key={fish}
               top={top}

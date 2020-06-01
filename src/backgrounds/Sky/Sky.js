@@ -3,7 +3,6 @@ import { ThemeContext } from "styled-components";
 import { Background } from "../../utils/common";
 
 import SkyLight from "./light/Sky.svg";
-
 import SkyDark from "./dark/SkyNight.svg";
 
 import Stars from "../../animations/Stars";

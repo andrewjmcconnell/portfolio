@@ -21,7 +21,7 @@ export default [
     color: "yellow",
     name: "Chicago, IL",
     image: Chicago,
-    text: "YOU'RE IN CHICAGO"
+    text: "After college I moved to Chicago and began working at Unitedhealth Group/Optum in Schaumburg before switching to a fast-paced software engineering role at Citybase."
   },
   {
     color: "green",

@@ -1,10 +1,10 @@
 import React from "react";
 
 import { FirefliesWrapper, Firefly } from "./Fireflies.styled";
+import { getRandomInt } from "../../utils/common";
 
 const Fireflies = ({ z }) => {
   const fireflies = 20;
-  const getRandomInt = max => Math.floor(Math.random() * Math.floor(max));
   return (
     <FirefliesWrapper>
       {[...new Array(fireflies).keys()].map(id => (

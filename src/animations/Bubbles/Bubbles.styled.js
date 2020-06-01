@@ -29,7 +29,7 @@ export const OuterBubbleWrapper = styled.div`
 export const BubbleWrapper = styled.div`
   position: absolute;
   will-change: transform;
-  width: ${({ width }) => width}vw;
+  width: ${({ width }) => width}vmax;
   top: 100vh;
   left: ${({ left }) => left}vw;
   animation: ${rise} ${({ duration }) => duration}s linear

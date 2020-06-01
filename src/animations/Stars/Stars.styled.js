@@ -21,7 +21,12 @@ const twinkle = keyframes`
   }
 `;
 
-export const Star = styled.div`
+export const Star = styled.div.attrs(props => ({
+  style: {
+    top: `${props.top}%`,
+    left: `${props.left}%`
+  }
+}))`
   position: absolute;
   will-change: transform, background;
   width: 0.5vmin;
@@ -29,8 +34,6 @@ export const Star = styled.div`
   background: rgba(255, 255, 255, 0);
   border-radius: 0.5vmin;
   z-index: 1;
-  top: ${({ top }) => top}%;
-  left: ${({ left }) => left}%;
   animation: ${twinkle}
     ${({ duration, delay }) => `${duration}s linear ${delay}s infinite;`};
 `;

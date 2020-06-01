@@ -15,7 +15,7 @@ const Bubbles = () => {
         const width = getRandomInt(4) + 1;
         const left = getRandomInt(100);
         return (
-          <OuterBubbleWrapper delay={delayOuter}>
+          <OuterBubbleWrapper key={bubble} delay={delayOuter}>
             <BubbleWrapper
               key={bubble}
               left={left}

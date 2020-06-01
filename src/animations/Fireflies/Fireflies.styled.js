@@ -4,8 +4,8 @@ const move = ({ steps, random }) => keyframes`
   ${[...new Array(steps).keys()].map(
     step =>
       `${step * (100 / steps)}% {
-    transform: translateX(${random(100)}vw) translateY(${random(
-        100
+    transform: translateX(${random(100, -100)}vw) translateY(${random(
+        100, -100
       )}vh) scale(${random(75) / 100 + 0.25});
   }}`
   )}
@@ -36,7 +36,6 @@ export const FirefliesWrapper = styled.div`
   height: 100%;
   width: 100%;
   left: 0;
-  top: ${({ top }) => top}00vh;
   overflow: hidden;
   background-color: transparent;
 `;

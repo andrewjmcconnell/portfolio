@@ -46,7 +46,7 @@ export const Item = styled.li`
   z-index: calc(${({ total }) => total} - ${({ index }) => index} + 5);
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 15px;
-  box-shadow: 13px 0px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 14px 0px rgb(246, 246, 249), 0px 3px 8px 0px rgb(202, 206, 216);
   text-align: right;
   cursor: pointer;
 

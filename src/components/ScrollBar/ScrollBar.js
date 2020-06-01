@@ -18,7 +18,7 @@ const ScrollBar = ({ refs }) => {
       window.removeEventListener("scroll", listener);
     };
   });
-  const scroll = offset => _ => {
+  const scroll = offset => () => {
     if (!!refs[refIndex + offset]) {
       refs[refIndex + offset].current.scrollIntoView({
         behavior: "smooth"

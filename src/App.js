@@ -28,15 +28,16 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(
     stored === "true" ? true : false
   );
+
   return (
     <Router>
       <GlobalStyle />
       <ThemeProvider theme={isDarkMode ? dark : light}>
-          <Menu theme={isDarkMode} toggleTheme={setIsDarkMode} />
-          <Switch>
-            <Route exact path="/" component={LandingPage} role="main" />
-            <Route exact path="/about" component={AboutMe} role="main" />
-          </Switch>
+        <Menu theme={isDarkMode} toggleTheme={setIsDarkMode} />
+        <Switch>
+          <Route exact path="/" component={LandingPage} role="main" />
+          <Route exact path="/about" component={AboutMe} role="main" />
+        </Switch>
       </ThemeProvider>
     </Router>
   );

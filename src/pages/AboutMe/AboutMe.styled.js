@@ -1,16 +1,17 @@
 import styled, { keyframes } from "styled-components";
 
 const carousel = keyframes`
-    0%,  15%  { transform: translateZ(-35vw) rotateY(0); }
-	20%, 35%  { transform: translateZ(-35vw) rotateY(-90deg); }
-	40%, 55%  { transform: translateZ(-35vw) rotateY(-180deg); }
-    60%, 75% { transform: translateZ(-35vw) rotateY(-270deg); }
-    80%, 100% { transform: translateZ(-35vw) rotateY(-360deg); }
+    0%,  15%  { transform: translateZ(-45vw) rotateY(0); }
+	  20%, 35%  { transform: translateZ(-45vw) rotateY(-90deg); }
+	  40%, 55%  { transform: translateZ(-45vw) rotateY(-180deg); }
+    60%, 75% { transform: translateZ(-45vw) rotateY(-270deg); }
+    80%, 100% { transform: translateZ(-45vw) rotateY(-360deg); }
 `;
 
 export const Page = styled.div`
   height: 100vh;
   display: flex;
+  background: ${({ theme }) => theme.colors.background};
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -18,7 +19,7 @@ export const Page = styled.div`
 
 export const Wrapper = styled.div`
   position: relative;
-  width: 30vmax;
+  width: 50vmax;
   height: 80vh;
   max-width: 50vw;
   max-height: 100vw;
@@ -34,7 +35,7 @@ export const Content = styled.div`
   height: 100%;
   transform-origin: center;
   transform-style: preserve-3d;
-  transform: ${({ rotate }) => `translateZ(-35vw) rotateY(${rotate}deg)`};
+  transform: ${({ rotate }) => `translateZ(-45vw) rotateY(${rotate}deg)`};
   transition: transform 3s cubic-bezier(0.77, 0, 0.175, 1);
 //   animation: ${carousel} 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
 `;
@@ -51,25 +52,22 @@ export const Card = styled.button`
   border-radius: 6px;
   transform-origin: center;
   border: none;
+  background: ${({ theme }) => theme.colors.primary};
 
   &:nth-child(1) {
-    background: #fdd94f;
-    transform: rotateY(0) translateZ(35vw);
+    transform: rotateY(0) translateZ(45vw);
   }
 
   &:nth-child(2) {
-    background: #f87949;
-    transform: rotateY(90deg) translateZ(35vw);
+    transform: rotateY(90deg) translateZ(45vw);
   }
 
   &:nth-child(3) {
-    background: #fbab48;
-    transform: rotateY(180deg) translateZ(35vw);
+    transform: rotateY(180deg) translateZ(45vw);
   }
 
   &:nth-child(4) {
-    background: #fbab48;
-    transform: rotateY(270deg) translateZ(35vw);
+    transform: rotateY(270deg) translateZ(45vw);
   }
 
   * {

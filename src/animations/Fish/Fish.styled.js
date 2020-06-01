@@ -24,11 +24,14 @@ export const OuterFishWrapper = styled.div`
   animation: ${bounce} 1.5s alternate ${({ delay }) => delay}s infinite ease-in-out;
 `;
 
-export const FishWrapper = styled.div`
+export const FishWrapper = styled.div.attrs(({ top, width }) => ({
+  style: {
+    top: `${top}vw`,
+    width: `-${width}vmax`
+  }
+}))`
   position: absolute;
   will-change: transform;
   ${({ left, width }) => left ? `left: -${width}vw` : `right: -${width}vw`};
-  top: ${({ top }) => top}vw;
-  width: ${({ width }) => width}vw;
   animation: ${swim} ${({ duration }) => duration}s linear ${({ delay }) => delay}s infinite;
 `;

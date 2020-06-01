@@ -9,11 +9,14 @@ const CloudMove = ({ width }) => keyframes`
   }
 `;
 
-export const CloudWrapper = styled.div`
+export const CloudWrapper = styled.div.attrs(props => ({
+  style: {
+    top: `${props.top}vh`,
+    left: `-${props.width}vmax`
+  }
+}))`
   position: absolute;
   will-change: transform;
-  top: ${({ top }) => top}vh;
-  left: -${({ width }) => width}vw;
   animation: ${CloudMove}
     ${({ duration, delay }) => `${duration}s linear ${delay}s infinite`};
 `;

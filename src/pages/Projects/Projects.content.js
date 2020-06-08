@@ -1,131 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
-import { FormattedInput, createFormat } from "formatted-input";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faRemoveFormat,
+  faCalculator,
+  faFile
+} from "@fortawesome/free-solid-svg-icons";
 
-import simplexMethod from "../../img/projects/simplex_method.png";
-import rulpDescription from "../../img/projects/rulp_description.png";
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
+const Img = styled(FontAwesomeIcon)`
+  display: block;
+  margin: auto;
+  font-size: 2.5vmax;
+  color: ${({ theme }) => theme.colors.background};
 `;
-
-const Buffer = styled.div`
-  padding: 0.5rem 0;
-`;
-
-const Text = styled.div`
-  color: ${({ theme }) => theme.colors.onBackground};
-`;
-
-const Img = styled.img`
-  max-width: ${({ width }) => width};
-  max-height: ${({ height }) => height};
-`;
-
-const FormattedInputDemo = () => {
-  const [moneyValue, setMoneyValue] = useState("1");
-  const [dateValue, setDateValue] = useState("12345678");
-  const [phoneValue, setPhoneValue] = useState("12345678900");
-
-  const moneyFormats = [
-    "",
-    "$0.0_",
-    "$0.__",
-    "$_.__",
-    "$__.__",
-    "$___.__",
-    "$_,___.__",
-    "$__,___.__",
-    "$___,___.__",
-    "$_,___,___.__",
-    "$__,___,___.__",
-    "$___,___,___.__"
-  ];
-
-  const dateFormats = [
-    "",
-    "_",
-    "__",
-    "__/_",
-    "__/__",
-    "__/__/_",
-    "__/__/__",
-    "__/__/___",
-    "__/__/____"
-  ];
-
-  const phoneFormats = [
-    "",
-    "+_",
-    "+_ (_)",
-    "+_ (__)",
-    "+_ (___) ",
-    "+_ (___) _",
-    "+_ (___) __",
-    "+_ (___) ___ - ",
-    "+_ (___) ___ - _",
-    "+_ (___) ___ - __",
-    "+_ (___) ___ - ___",
-    "+_ (___) ___ - ____",
-    "+__ (___) ___ - ____",
-    "+___ (___) ___ - ____"
-  ];
-
-  return (
-    <Content>
-      <Text>Try me!</Text>
-      <Buffer>
-        <Text>Currency</Text>
-        <FormattedInput
-          value={moneyValue}
-          formatter={createFormat(moneyFormats, "_")}
-          onChange={rawValue => setMoneyValue(rawValue)}
-          aria-label="moneyDemo"
-        />
-        <Text>Value: {moneyValue}</Text>
-      </Buffer>
-      <Buffer>
-        <Text>Dates</Text>
-        <FormattedInput
-          value={dateValue}
-          formatter={createFormat(dateFormats, "_")}
-          onChange={rawValue => setDateValue(rawValue)}
-          aria-label="datesDemo"
-        />
-        <Text>Value: {dateValue}</Text>
-      </Buffer>
-      <Buffer>
-        <Text>Phone Numbers</Text>
-        <FormattedInput
-          value={phoneValue}
-          formatter={createFormat(phoneFormats, "_")}
-          onChange={rawValue => setPhoneValue(rawValue)}
-          aria-label="phoneDemo"
-        />
-        <Text>Value: {phoneValue}</Text>
-      </Buffer>
-    </Content>
-  );
-};
-
-const RulpDemo = () => {
-  return (
-    <Content>
-      <Img src={simplexMethod} alt="simplex_method" height="50%" width="50%" />
-      <Img
-        src={rulpDescription}
-        alt="rulp_description"
-        height="100%"
-        width="100%"
-      />
-    </Content>
-  );
-};
 
 export default [
   {
@@ -136,22 +24,27 @@ export default [
     input. These formats are unrestricted and easy to use, and allow the
     user to create an input which can format anything. This will only affect what is displayed in the input, while
     the component maintains the user's input under the hood.`,
-    content: <FormattedInputDemo />,
-    link: "https://www.npmjs.com/package/formatted-input"
+    icon: <Img icon={faRemoveFormat} />,
+    link: "https://www.npmjs.com/package/formatted-input",
+    linkTitle: "NPM"
   },
   {
     id: "rulp",
     title: "Rulp (Rust Linear Programming)",
     description: `Rulp is an open source Rust library hosted on Cargo intending to
     simplify the representation and solution of linear programming problems.`,
-    content: <RulpDemo />,
-    link: "https://crates.io/crates/rulp"
+    icon: <Img icon={faCalculator} />,
+    link: "https://crates.io/crates/rulp",
+    linkTitle: "Crates"
   },
   {
-    id: "thirdproject",
-    title: "Third Project",
-    description: `Third project coming soon...`,
-    content: null,
-    link: null
+    id: "portfolio",
+    title: "This Website",
+    description: `This website was built completely from scratch using minimal 3rd-party libraries. All animations are pure CSS.
+    The site is hosted on Amazon EC2 with pm2 running the application. Graphics were created or modified on Vecteezy,
+    and icons are from tabler-icons or font awesome.`,
+    icon: <Img icon={faFile} />,
+    link: "https://github.com/andrewjmcconnell/portfolio",
+    linkTitle: "Github"
   }
 ];

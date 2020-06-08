@@ -1,53 +1,30 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Swiper = styled.div`
   display: flex;
-  min-width: 85vw;
+  min-width: 90vw;
   height: 100%;
   background: ${({ theme }) => theme.colors.background};
   margin-right: ${({ spacing }) => spacing};
   border-radius: 25px;
   transform: translateX(5vw);
-  ${({ theme }) =>
-    theme.isMobile
-      && `
-    min-width: 90vw;
-    height: auto;
-    transform: translateX(0);
-    `}
 `;
 
 export const Item = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-
-  ${({ theme }) =>
-    theme.isMobile &&
-    `
-flex-direction: column;
-`}
+  flex-direction: column;
+  padding: 2vmax;
 `;
 
 export const Demo = styled.div`
-  flex-shrink: 0;
-  height: 300px;
-  width: 300px;
-  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
-  border-radius: 20px;
-  transform: translateX(-5vw);
-
+  border-radius: 50%;
+  width: 7.5vmax;
+  height: 7.5vmax;
+  background-color: ${({ theme }) => theme.colors.primary};
   display: flex;
-  flex-direction: column;
   justify-content: center;
-
-  ${({ theme }) =>
-    theme.isMobile &&
-    `transform: translateY(1vh);
-  width: 50vw;
-  height: 50vw;
-  max-height: 200px;
-  max-width: 200px;`}
 `;
 
 export const Content = styled.div`
@@ -57,30 +34,83 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  ${({ theme }) =>
-    theme.isMobile &&
-    `text-align: center;
-    padding: 0 30px;`}
+  align-items: center;
+  text-align: center;
+  padding: 0 30px;
 `;
 
 export const ButtonWrapper = styled.div`
-  width: 100%;
+  width: 200px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 export const Button = styled.a`
-  display: inline-flex;
-  background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
-  padding: 15px 35px;
-  border-radius: 50px;
-  color: #fff;
-  justify-content: center;
-  text-align: center;
+  position: relative;
+  padding: 20px 50px;
+  display: block;
   text-decoration: none;
-  margin-bottom: 5vmin;
-  width: 30%;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 40px;
+
+  span {
+    position: relative;
+    color: #fff;
+    fot-size: 20px;
+    font-family: Arial;
+    letter-spacing: 8px;
+  }
+
+  &:hover {
+    div {
+      top: -120px;
+    }
+  }
+`;
+
+const animate = keyframes`
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+`;
+
+export const ButtonLiquid = styled.div`
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+
+  &:before,
+  &:after {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+
+  &:before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: ${animate} 5s linear infinite;
+  }
+
+  &:after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, 0.5);
+    animation: ${animate} 10s linear infinite;
+  }
 `;
 
 export const Title = styled.div`

@@ -8,19 +8,19 @@ export const Wrapper = styled.div`
 export const SlideContainer = styled.div`
   position: relative;
   display: flex;
-  max-width: 90vw;
-  height: 60vh;
+  max-width: 95vw;
+  height: 65vh;
   margin: 0 auto;
   overflow: hidden;
 
-  // ${({ theme }) => theme.isMobile && `overflow-x: scroll;`}
+  ${({ theme }) => theme.isMobile && `overflow-x: scroll;`}
 `;
 
 export const SlideWrapper = styled.div`
   display: flex;
   width: calc(90vw * ${({ pages }) => pages.length});
   height: 100%;
-  transform: translateX(calc((${({ theme }) => theme.isMobile ? "-90vw" : "-85vw"} - ${({ spacing }) => spacing}) * ${({ index }) => index}));
+  transform: translateX(calc((-90vw - ${({ spacing }) => spacing}) * ${({ index }) => index} - 2.5vw));
   transition: transform 1s;
 `;
 

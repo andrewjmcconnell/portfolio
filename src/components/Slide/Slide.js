@@ -8,18 +8,22 @@ import {
   Title,
   Description,
   ButtonWrapper,
-  Button
+  Button,
+  ButtonLiquid
 } from "./Slide.styled";
 
-const Slide = ({ spacing, title, description, link, content }) => (
+const Slide = ({ spacing, title, description, link, linkTitle, icon }) => (
   <Swiper spacing={spacing}>
     <Item>
-      <Demo>{content}</Demo>
+      <Demo>{icon}</Demo>
       <Content>
         <Title>{title}</Title>
         <Description>{description}</Description>
         <ButtonWrapper>
-          <Button href={link}>Click me!</Button>
+          <Button href={link}>
+            <ButtonLiquid />
+            <span>{linkTitle}</span>
+          </Button>
         </ButtonWrapper>
       </Content>
     </Item>

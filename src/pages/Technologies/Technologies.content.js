@@ -1,19 +1,19 @@
-import ReactJs from "../../img/technologies/react.png";
-import Redux from "../../img/technologies/redux.png";
-import NodeJs from "../../img/technologies/node.png";
-import Swift from "../../img/technologies/swift.png";
-import Python from "../../img/technologies/python.png";
-import Nginx from "../../img/technologies/nginx.png";
+import ReactJs from "../../img/technologies/react.svg";
+import Redux from "../../img/technologies/redux.svg";
+import NodeJs from "../../img/technologies/node.svg";
+import Swift from "../../img/technologies/swift.svg";
+import Python from "../../img/technologies/python.svg";
+import Nginx from "../../img/technologies/nginx.svg";
 
-import Git from "../../img/technologies/git.png";
-import Github from "../../img/technologies/github.png";
-import Gitkraken from "../../img/technologies/gitkraken.png";
+import Git from "../../img/technologies/git.svg";
+import Github from "../../img/technologies/github.svg";
+import Gitkraken from "../../img/technologies/gitkraken.svg";
 
-import Jenkins from "../../img/technologies/jenkins.png";
-import CircleCI from "../../img/technologies/circleci.png";
-import Kubernetes from "../../img/technologies/kubernetes.png";
-import Argo from "../../img/technologies/argo.png";
-import EC2 from "../../img/technologies/ec2.png";
+import Jenkins from "../../img/technologies/jenkins.svg";
+import CircleCI from "../../img/technologies/circleci.svg";
+import Kubernetes from "../../img/technologies/kubernetes.svg";
+import Argo from "../../img/technologies/argo.svg";
+import EC2 from "../../img/technologies/ec2.svg";
 
 export const AppDevelopmentContent = [
   {

@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRemoveFormat,
   faCalculator,
-  faFile
+  faFile,
+  faBeer
 } from "@fortawesome/free-solid-svg-icons";
 
 const Img = styled(FontAwesomeIcon)`
@@ -36,6 +37,15 @@ export default [
     icon: <Img icon={faCalculator} />,
     link: "https://crates.io/crates/rulp",
     linkTitle: "Crates"
+  },
+  {
+    id: "beer-graphics",
+    title: "Beer Graphics",
+    description:
+      "Beer Graphics is a d3 based project that sources data from BreweryDB through a Next.js fullstack app to render images representing each beer. The project is hosted by Vercel.",
+    icon: <Img icon={faBeer} />,
+    link: "https://beer-graphics.vercel.app/",
+    linkTitle: "Website"
   },
   {
     id: "portfolio",

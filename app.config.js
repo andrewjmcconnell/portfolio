@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
     name       : "client",
-    script     : "serve -s build",
+    script     : "yarn start",
     watch       : true,
     env: {
       "NODE_ENV": "development",

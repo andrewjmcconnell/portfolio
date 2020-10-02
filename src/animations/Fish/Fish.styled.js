@@ -9,7 +9,7 @@ const swim = ({ left, width }) => keyframes`
    transform: translateX(0)
   }
   100% {
-    ${left ? `transform: translateX(calc(100vw + ${width}vw))` : `transform: translateX(calc(-100vw - ${width}vw))`};
+    ${left ? `transform: translateX(calc(100vw + ${width}vw))` : `transform: translateX(calc(-100vw - 2 * ${width}vw))`};
   }
 `;
 

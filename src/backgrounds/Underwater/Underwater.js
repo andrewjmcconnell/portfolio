@@ -24,7 +24,7 @@ const Underwater = () => {
         src={WaterDarkForeground}
         width="100"
         z={2}
-        extraStyles="bottom: 0; left: 0; right: 0;"
+        extraStyles="left: 0; right: 0; bottom: 0; object-fit: cover;"
       />
     </Fragment>
   ) : (

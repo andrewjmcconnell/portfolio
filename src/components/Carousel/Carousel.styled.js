@@ -12,7 +12,7 @@ export const SlideContainer = styled.div`
   height: 65vh;
   margin: 0 auto;
   overflow: hidden;
-
+  z-index: 2;
   ${({ theme }) => theme.isMobile && `overflow-x: scroll;`}
 `;
 
@@ -26,4 +26,5 @@ export const SlideWrapper = styled.div`
 
 export const PaginationWrapper = styled.div`
   margin: 2vh auto;
+  z-index: 2;
 `;

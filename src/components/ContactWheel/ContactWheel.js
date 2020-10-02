@@ -25,7 +25,7 @@ const ContactWheel = () => {
   const [isOpen, setOpen] = useState(false);
 
   const redirect = url => () => {
-    window.location.assign(url);
+    window.open(url, "_blank");
   };
 
   return (
